@@ -1,0 +1,35 @@
+.nav-container {
+    background-color: $color-dark;
+    color: $color-light;
+    #svg-lines {
+        fill: $color-light;
+    }
+    height: 5vh;
+    font-size: 1.2em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+}
+
+@keyframes open {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+.navbar {
+    width: 0%;
+    overflow: hidden;
+    animation: open 1.2s ease 2s forwards;
+    // margin: 0 1em;
+    display: flex;
+    justify-content: center;
+    .nav-item:not(:last-child) {
+        margin-right: 1em;
+    }
+}

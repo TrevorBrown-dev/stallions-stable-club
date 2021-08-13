@@ -1,0 +1,28 @@
+.hero {
+    overflow: hidden;
+
+    & img {
+        width: auto;
+        height: 95vh;
+        object-fit: contain !important;
+        // background-position: center center;
+    }
+    position: relative;
+    height: 95vh;
+    .logo-container {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        .logo {
+            position: absolute;
+            width: 20%;
+            #stable-logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
