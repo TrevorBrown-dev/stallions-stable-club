@@ -1,5 +1,9 @@
 .nav-container {
-    background-color: $color-dark;
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    background-color: rgba($color-dark, 0.7);
+    backdrop-filter: blur(1em);
     color: $color-light;
     #svg-lines {
         fill: $color-light;
@@ -21,12 +25,24 @@
         width: 40%;
     }
 }
+@keyframes open-wide {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 60%;
+    }
+}
 
 .navbar {
+    $nav-open-speed: 0.8s;
+    $nav-open-delay: 1s;
     width: 0%;
     overflow: hidden;
-    animation: open 1.2s ease 2s forwards;
-    // margin: 0 1em;
+    animation: open $nav-open-speed ease $nav-open-delay forwards;
+    @media (max-width: $width_phone) {
+        animation: open-wide $nav-open-speed ease $nav-open-delay forwards;
+    }
     display: flex;
     justify-content: center;
     .nav-item:not(:last-child) {

@@ -9,7 +9,7 @@
         &::after {
             content: '';
         }
-        background-color: rgba(rgb(92, 89, 65), 0.6);
+        background-color: rgba($color-secondary, 0.7);
     }
     img {
         z-index: 0;

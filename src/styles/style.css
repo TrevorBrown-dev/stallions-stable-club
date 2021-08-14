@@ -183,13 +183,20 @@ h6 {
   text-decoration: none !important;
 }
 
+.page-main-container {
+  padding-top: 5vh;
+}
 #svg-lines {
   width: 4em;
   height: auto;
 }
 
 .nav-container {
-  background-color: #000;
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1em);
   color: #fff;
   height: 5vh;
   font-size: 1.2em;
@@ -211,15 +218,54 @@ h6 {
     width: 40%;
   }
 }
+@keyframes open-wide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
 .navbar {
   width: 0%;
   overflow: hidden;
-  animation: open 1.2s ease 2s forwards;
+  animation: open 0.8s ease 1s forwards;
   display: flex;
   justify-content: center;
 }
+@media (max-width: 850px) {
+  .navbar {
+    animation: open-wide 0.8s ease 1s forwards;
+  }
+}
 .navbar .nav-item:not(:last-child) {
   margin-right: 1em;
+}
+
+/* custom scrollbar */
+html > ::-webkit-scrollbar {
+  position: absolute;
+  width: 0.8em;
+  background-color: #4d4d4d;
+}
+
+::-webkit-scrollbar {
+  position: absolute;
+  width: 0.5em;
+  background-color: #4d4d4d;
+}
+
+.description > ::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border: 1em solid transparent;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cccccc;
 }
 
 .overlayed-image {
@@ -231,7 +277,7 @@ h6 {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(92, 89, 65, 0.6);
+  background-color: rgba(70, 52, 78, 0.7);
 }
 .overlayed-image .overlay::after {
   content: "";
@@ -242,17 +288,17 @@ h6 {
 }
 
 .test {
-  background-color: #ffff00;
+  background-color: #f5eb62;
 }
 
 .hero {
   overflow: hidden;
   position: relative;
-  height: 95vh;
+  height: 100vh;
 }
 .hero img {
   width: auto;
-  height: 95vh;
+  height: 100vh;
   object-fit: contain !important;
 }
 .hero .logo-container {
@@ -268,6 +314,9 @@ h6 {
   width: 20%;
 }
 .hero .logo-container .logo #stable-logo {
+  color: #f5eb62;
+  fill: #f5eb62;
+  filter: drop-shadow(0px 0px 5px rgba(174, 149, 185, 0.3));
   width: 100%;
   height: 100%;
 }
