@@ -4,7 +4,7 @@ import { TheStableClubLogo } from '../../components/svgs/TheSableClubLogo';
 import HeroImage from '../../media/Hero.jpg';
 export const Hero: React.FC = () => {
     return (
-        <div className='hero'>
+        <div className='hero crop'>
             <div className="hero-container">
                 <div className="hero-content">
                     <div className="h-logo">

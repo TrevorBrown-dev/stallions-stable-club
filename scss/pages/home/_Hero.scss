@@ -10,9 +10,19 @@
     height: 100vh;
     overflow: hidden;
     $h-alpha: 0.7;
-    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-secondary, $h-alpha)), url('../media/Hero.jpg');
-    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-secondary, $h-alpha)), url('../media/Hero.webp');
     background-size: cover;
+
+    //These three props make the parallax effect!
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    //This will be for a nice looking crop on the image
+    &.crop {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
     //To separate concerns we will put a container for the actual div content
     .hero-container {
         //This is the true container for the content. It will have a padding at the top to account for the 5vh covered by the nav.
@@ -36,6 +46,20 @@
                 'h-desc h-contact h-form'
                 'h-desc h-contact h-form'
                 'h-desc h-contact h-form';
+
+            @media (max-width: $width_phone) {
+                grid-template-areas:
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo'
+                    'h-logo h-logo h-logo';
+            }
         }
 
         .h-logo {
@@ -43,16 +67,29 @@
             grid-area: h-logo;
         }
         .h-tag {
+            @media (max-width: $width_phone) {
+                display: none;
+            }
             grid-area: h-tag;
         }
         .h-desc {
+            @media (max-width: $width_phone) {
+                display: none;
+            }
             grid-area: h-desc;
         }
 
         .h-form {
+            align-self: center;
+            @media (max-width: $width_phone) {
+                display: none;
+            }
             grid-area: h-form;
         }
         .h-contact {
+            @media (max-width: $width_phone) {
+                display: none;
+            }
             grid-area: h-contact;
         }
     }

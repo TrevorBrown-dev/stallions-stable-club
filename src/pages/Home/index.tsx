@@ -2,7 +2,7 @@ import HeroImage from '../../media/Hero.jpg';
 import { Hero } from './Hero';
 export const Home: React.FC = () => {
     return (
-        <div>
+        <div className="home">
             <Hero />
             <div>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos vero libero dolorum impedit eligendi consequatur aliquid similique quaerat. Earum, laborum accusantium sapiente
