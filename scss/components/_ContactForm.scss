@@ -1,0 +1,15 @@
+//The actual form and it's layout.
+.contact-form {
+}
+
+//The containing element of the form.
+.contact-form-container {
+    height: 100%;
+    width: 100%;
+    border: 2px solid $color-secondary;
+    border-radius: 1.2em;
+    background-color: rgba($color-off-light, 0.2);
+    backdrop-filter: blur(0.2em);
+
+    padding: 2.5em;
+}

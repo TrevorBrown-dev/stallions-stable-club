@@ -35,8 +35,8 @@
 }
 
 .navbar {
-    $nav-open-speed: 0.8s;
-    $nav-open-delay: 1s;
+    $nav-open-speed: 0.5s;
+    $nav-open-delay: 0.2s;
     width: 0%;
     overflow: hidden;
     animation: open $nav-open-speed ease $nav-open-delay forwards;

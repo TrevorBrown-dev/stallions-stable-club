@@ -1,31 +1,59 @@
+#stable-logo {
+    color: $color-primary;
+    fill: $color-primary;
+    filter: drop-shadow(0px 0px 5px rgba(lighten($color-secondary, 40%), 0.3));
+    width: 100%;
+    height: 100%;
+}
+//The styling for the background image.
 .hero {
-    overflow: hidden;
-
-    & img {
-        width: auto;
-        height: 100vh;
-        object-fit: contain !important;
-        // background-position: center center;
-    }
-    position: relative;
     height: 100vh;
-    .logo-container {
-        position: absolute;
-        z-index: 3;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        place-items: center;
-        .logo {
-            position: absolute;
-            width: 20%;
-            #stable-logo {
-                color: $color-primary;
-                fill: $color-primary;
-                filter: drop-shadow(0px 0px 5px rgba(lighten($color-secondary, 40%), 0.3));
-                width: 100%;
-                height: 100%;
-            }
+    overflow: hidden;
+    $h-alpha: 0.7;
+    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-secondary, $h-alpha)), url('../media/Hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    //To separate concerns we will put a container for the actual div content
+    .hero-container {
+        //This is the true container for the content. It will have a padding at the top to account for the 5vh covered by the nav.
+        padding-top: 5vh;
+
+        .hero-content {
+            //This will contain the actual content for the grid once it is properly aligned and set up.
+            padding: 1em 3em;
+            color: $color-light;
+            display: grid;
+            grid-template-rows: repeat(10 minmax(0%, 10%));
+            grid-template-columns: repeat(3, minmax(0%, 33%));
+            grid-template-areas:
+                'h-logo h-blank h-form'
+                'h-logo h-blank h-form'
+                'h-logo h-blank h-form'
+                'h-logo h-blank h-form'
+                'h-tag h-blank h-form'
+                'h-tag  h-blank h-form'
+                'h-desc  h-blank h-form'
+                'h-desc h-contact h-form'
+                'h-desc h-contact h-form'
+                'h-desc h-contact h-form';
+        }
+
+        .h-logo {
+            padding: 5em;
+            grid-area: h-logo;
+        }
+        .h-tag {
+            grid-area: h-tag;
+        }
+        .h-desc {
+            grid-area: h-desc;
+        }
+
+        .h-form {
+            grid-area: h-form;
+        }
+        .h-contact {
+            grid-area: h-contact;
         }
     }
 }
