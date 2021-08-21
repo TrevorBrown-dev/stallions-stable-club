@@ -6,21 +6,15 @@
     height: 100%;
 }
 //The styling for the background image.
+
 .hero {
     height: 100vh;
     overflow: hidden;
-    $h-alpha: 0.7;
-    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-secondary, $h-alpha)), url('../media/Hero.webp');
-    background-size: cover;
-
-    //These three props make the parallax effect!
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    @include background-parralax(0.7, '../media/Hero.webp');
 
     //This will be for a nice looking crop on the image
     &.crop {
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5em), 0 100%);
     }
 
     //To separate concerns we will put a container for the actual div content
@@ -28,16 +22,18 @@
         //This is the true container for the content. It will have a padding at the top to account for the 5vh covered by the nav.
         padding-top: 5vh;
 
+        padding-bottom: 5em;
         .hero-content {
             //This will contain the actual content for the grid once it is properly aligned and set up.
             padding: 1em 3em;
             color: $color-light;
             display: grid;
-            grid-template-rows: repeat(10 minmax(0%, 10%));
-            grid-template-columns: repeat(3, minmax(0%, 33%));
+            grid-template-rows: repeat(10 1fr);
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 1em;
             grid-template-areas:
-                'h-logo h-blank h-form'
-                'h-logo h-blank h-form'
+                'h-logo h-social h-form'
+                'h-logo h-social h-form'
                 'h-logo h-blank h-form'
                 'h-logo h-blank h-form'
                 'h-tag h-blank h-form'
@@ -63,7 +59,11 @@
         }
 
         .h-logo {
-            padding: 5em;
+            #stable-logo {
+                height: 20em;
+                width: auto;
+                filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
+            }
             grid-area: h-logo;
         }
         .h-tag {
@@ -78,9 +78,18 @@
             }
             grid-area: h-desc;
         }
+        .h-social {
+            @media (max-width: $width_phone) {
+                display: none;
+            }
+            grid-area: h-social;
+        }
 
         .h-form {
             align-self: center;
+            iframe {
+                height: 30em;
+            }
             @media (max-width: $width_phone) {
                 display: none;
             }

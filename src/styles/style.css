@@ -17,7 +17,7 @@ https://github.com/oxalorg/sakura
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  font-family: sans-serif;
+  font-family: Lato, sans-serif;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: overlay;
@@ -190,16 +190,38 @@ h6 {
 .page-main-container {
   padding-top: 5vh;
 }
+.align-bottom {
+  display: flex;
+  align-content: flex-end;
+}
+
 #svg-lines {
   width: 4em;
   height: auto;
+}
+
+svg#stable-logo {
+  --fill-primary: #fa7d09;
+  --fill-secondary: #cccccc;
+}
+
+.social-media a:not(:last-child) {
+  margin-right: 1em;
+}
+.social-media svg {
+  width: 3em;
+  fill: #fff;
+}
+.social-media svg:hover {
+  fill: #fa7d09;
+  cursor: pointer;
 }
 
 .nav-container {
   position: absolute;
   z-index: 10;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(47, 37, 25, 0.6);
   backdrop-filter: blur(1em);
   color: #fff;
   height: 5vh;
@@ -210,8 +232,19 @@ h6 {
   align-items: center;
   flex-grow: 0;
 }
+.nav-container .bullet {
+  font-weight: 100;
+  user-select: none;
+  display: block;
+  width: 2em;
+  text-align: center;
+}
 .nav-container #svg-lines {
   fill: #fff;
+}
+.nav-container a:hover {
+  color: #fa7d09;
+  text-decoration: none;
 }
 
 @keyframes open {
@@ -242,10 +275,6 @@ h6 {
     animation: open-wide 0.5s ease 0.2s forwards;
   }
 }
-.navbar .nav-item:not(:last-child) {
-  margin-right: 1em;
-}
-
 /* custom scrollbar */
 html > ::-webkit-scrollbar {
   position: absolute;
@@ -264,12 +293,26 @@ html > ::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b3b3b3;
+  background-color: #999999;
   border: 1em solid transparent;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #cccccc;
+}
+
+button {
+  font-size: 1.2em;
+  background-color: #2f2519;
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid #72593c;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover {
+  border-color: #fa7d09;
+  color: #fa7d09;
 }
 
 @keyframes close-message {
@@ -300,9 +343,9 @@ html > ::-webkit-scrollbar {
   padding: 1em;
   width: 40rem;
   height: 10rem;
-  border: 3px solid #46344e;
+  border: 3px solid #2f2519;
   border-radius: 1rem;
-  background-color: rgba(43, 32, 47, 0.8);
+  background-color: rgba(14, 11, 7, 0.8);
   color: #fff;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -320,31 +363,31 @@ html > ::-webkit-scrollbar {
   width: 100%;
   height: 1rem;
   bottom: 0;
-  background-color: #f5eb62;
+  background-color: #fa7d09;
   animation: close-message ease-in-out forwards;
 }
 
 input {
   all: unset;
   transition: all 0.3s ease;
-  color: #2b202f;
+  color: #0e0b07;
   background-color: #fff;
-  border: 2px solid #7d5d8b;
+  border: 2px solid #72593c;
   border-radius: 10px;
   padding: 0.5em 1em;
   font-size: 1.2em;
 }
 input:focus {
-  border-color: #f5eb62;
+  border-color: #fa7d09;
   transform: scale(1.01);
 }
 
 textarea {
   all: unset;
   transition: all 0.3s ease;
-  color: #2b202f;
+  color: #0e0b07;
   background-color: #fff;
-  border: 2px solid #7d5d8b;
+  border: 2px solid #72593c;
   border-radius: 10px;
   padding: 0.5em 1em;
   font-size: 1.2em;
@@ -352,8 +395,108 @@ textarea {
   height: auto;
 }
 textarea:focus {
-  border-color: #f5eb62;
+  border-color: #fa7d09;
   transform: scale(1.01);
+}
+
+.calendar {
+  padding: 2em;
+  border: 2px solid #cccccc;
+  border-radius: 30px;
+}
+.calendar .calendar-title {
+  text-align: center;
+}
+.calendar .today-button {
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #cccccc;
+  color: #cccccc;
+  transition: all 0.3s ease;
+  padding: 0 1em;
+  margin-right: 1em;
+}
+.calendar .today-button:hover {
+  color: #fa7d09;
+  border-color: #fa7d09;
+}
+.calendar .today-button:active {
+  color: #cccccc;
+  border-color: #cccccc;
+}
+.calendar .calendar-month {
+  padding: 0.6em;
+  text-align: center;
+}
+.calendar .calendar-month .year {
+  color: #cccccc;
+}
+.calendar .calendar-month .calendar-arrows {
+  color: #cccccc;
+  margin-right: 0.7em;
+  font-size: 1.8em;
+  font-weight: bold;
+  user-select: none;
+}
+.calendar .calendar-month .calendar-arrows div {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.calendar .calendar-month .calendar-arrows div:hover {
+  color: #fa7d09;
+}
+.calendar .calendar-month .calendar-arrows .arrow-left {
+  margin-right: 0.2em;
+}
+.calendar .calendar-grid {
+  display: grid;
+  grid-template-rows: auto;
+}
+.calendar .calendar-grid .calendar-days {
+  margin-bottom: 0.4em;
+}
+.calendar .calendar-grid .calendar-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar .calendar-grid .calendar-row:not(:last-child) > .calendar-cell {
+  border-bottom: none;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell {
+  border: 2px solid #cccccc;
+  background-color: #fff;
+  color: #000;
+  width: 6em;
+  min-height: 6em;
+  max-height: 15em;
+  transition: all 0.2s ease;
+  overflow-y: auto;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell:not(:last-child) {
+  border-right: none;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell:hover .day {
+  color: #fff;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell .day {
+  font-size: 0.8em;
+  color: #cccccc;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell .title {
+  font-weight: bold;
+}
+
+.spanning-card {
+  height: 10em;
+  background-color: rgba(47, 37, 25, 0.5);
+  border-top: 2px;
+  border-bottom: 2px;
+  border: solid #0e0b07;
+  width: 100%;
 }
 
 .contact-form .contact-fieldset {
@@ -376,26 +519,31 @@ textarea:focus {
 .contact-form .contact-fieldset .contact-grid .fill {
   grid-column: 1/-1;
 }
+.contact-form .contact-fieldset .contact-grid .dates {
+  grid-column: 1/-1;
+  margin: 0 auto;
+}
+.contact-form .contact-fieldset .contact-grid .dates input:first-child {
+  margin-right: 1em;
+}
 
 .contact-form-container {
-  height: auto;
-  width: 100%;
-  border: 2px solid #46344e;
+  border: 2px solid #2f2519;
   border-radius: 1.2em;
-  background-color: rgba(230, 230, 230, 0.2);
+  background-color: rgba(204, 204, 204, 0.2);
   backdrop-filter: blur(0.2em);
   padding: 2.5em;
 }
 
 .home {
   color: #fff;
-  background-color: #2b202f;
+  background-color: #0e0b07;
 }
 
 #stable-logo {
-  color: #f5eb62;
-  fill: #f5eb62;
-  filter: drop-shadow(0px 0px 5px rgba(174, 149, 185, 0.3));
+  color: #fa7d09;
+  fill: #fa7d09;
+  filter: drop-shadow(0px 0px 5px rgba(174, 141, 102, 0.3));
   width: 100%;
   height: 100%;
 }
@@ -403,25 +551,27 @@ textarea:focus {
 .hero {
   height: 100vh;
   overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(70, 52, 78, 0.7)), url("../media/Hero.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(47, 37, 25, 0.7)), url("../media/Hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 .hero.crop {
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5em), 0 100%);
 }
 .hero .hero-container {
   padding-top: 5vh;
+  padding-bottom: 5em;
 }
 .hero .hero-container .hero-content {
   padding: 1em 3em;
   color: #fff;
   display: grid;
-  grid-template-rows: repeat(10 minmax(0%, 10%));
-  grid-template-columns: repeat(3, minmax(0%, 33%));
-  grid-template-areas: "h-logo h-blank h-form" "h-logo h-blank h-form" "h-logo h-blank h-form" "h-logo h-blank h-form" "h-tag h-blank h-form" "h-tag  h-blank h-form" "h-desc  h-blank h-form" "h-desc h-contact h-form" "h-desc h-contact h-form" "h-desc h-contact h-form";
+  grid-template-rows: repeat(10 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1em;
+  grid-template-areas: "h-logo h-social h-form" "h-logo h-social h-form" "h-logo h-blank h-form" "h-logo h-blank h-form" "h-tag h-blank h-form" "h-tag  h-blank h-form" "h-desc  h-blank h-form" "h-desc h-contact h-form" "h-desc h-contact h-form" "h-desc h-contact h-form";
 }
 @media (max-width: 850px) {
   .hero .hero-container .hero-content {
@@ -429,8 +579,12 @@ textarea:focus {
   }
 }
 .hero .hero-container .h-logo {
-  padding: 5em;
   grid-area: h-logo;
+}
+.hero .hero-container .h-logo #stable-logo {
+  height: 20em;
+  width: auto;
+  filter: drop-shadow(3px 3px 5px rgba(204, 204, 204, 0.2));
 }
 .hero .hero-container .h-tag {
   grid-area: h-tag;
@@ -448,9 +602,20 @@ textarea:focus {
     display: none;
   }
 }
+.hero .hero-container .h-social {
+  grid-area: h-social;
+}
+@media (max-width: 850px) {
+  .hero .hero-container .h-social {
+    display: none;
+  }
+}
 .hero .hero-container .h-form {
   align-self: center;
   grid-area: h-form;
+}
+.hero .hero-container .h-form iframe {
+  height: 30em;
 }
 @media (max-width: 850px) {
   .hero .hero-container .h-form {
@@ -464,6 +629,18 @@ textarea:focus {
   .hero .hero-container .h-contact {
     display: none;
   }
+}
+
+.testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(47, 37, 25, 0.7)), url("../media/testing.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  clip-path: polygon(0 5em, 100% 0, 100% 100%, 0 100%);
+  padding-top: 5em;
+  margin-top: 2em;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

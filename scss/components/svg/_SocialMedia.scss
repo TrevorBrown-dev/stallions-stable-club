@@ -1,0 +1,13 @@
+.social-media {
+    a:not(:last-child) {
+        margin-right: 1em;
+    }
+    svg {
+        width: 3em;
+        fill: $color-light;
+        &:hover {
+            fill: $color-primary;
+            cursor: pointer;
+        }
+    }
+}

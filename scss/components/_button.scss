@@ -1,0 +1,14 @@
+button {
+    font-size: 1.2em;
+    background-color: $color-secondary;
+    color: $color-light;
+    border-radius: 10px;
+    border: 2px solid lighten($color-secondary, 20%);
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $color-primary;
+        color: $color-primary;
+    }
+}

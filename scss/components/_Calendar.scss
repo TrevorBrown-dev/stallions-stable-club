@@ -1,0 +1,96 @@
+.calendar {
+    padding: 2em;
+    border: 2px solid $color-off-light;
+    border-radius: 30px;
+    .calendar-title {
+        text-align: center;
+    }
+    .today-button {
+        text-align: center;
+        background-color: $color-light;
+        border: 2px solid $color-off-light;
+        color: $color-off-light;
+        transition: all 0.3s ease;
+        padding: 0 1em;
+        margin-right: 1em;
+        &:hover {
+            color: $color-primary;
+            border-color: $color-primary;
+        }
+        &:active {
+            color: $color-off-light;
+            border-color: $color-off-light;
+        }
+    }
+    .calendar-month {
+        padding: 0.6em;
+        text-align: center;
+        .year {
+            color: $color-off-light;
+        }
+
+        .calendar-arrows {
+            color: $color-off-light;
+            margin-right: 0.7em;
+            font-size: 1.8em;
+            font-weight: bold;
+            user-select: none;
+            div {
+                cursor: pointer;
+                transition: all 0.2s ease;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+            .arrow-left {
+                margin-right: 0.2em;
+            }
+        }
+    }
+    .calendar-grid {
+        display: grid;
+        grid-template-rows: auto;
+        .calendar-days {
+            // border: 1px solid $color-dark;
+            // border-bottom: none;
+            margin-bottom: 0.4em;
+        }
+        .calendar-row {
+            display: grid;
+            $cell-size: 6em;
+            grid-template-columns: repeat(7, 1fr);
+            &:not(:last-child) > .calendar-cell {
+                border-bottom: none;
+            }
+            .calendar-cell {
+                border: 2px solid $color-off-light;
+                background-color: $color-light;
+                color: $color-dark;
+                width: $cell-size;
+                min-height: $cell-size;
+                max-height: 15em;
+                transition: all 0.2s ease;
+                &:not(:last-child) {
+                    border-right: none;
+                }
+                overflow-y: auto;
+
+                &:hover {
+                    background-color: $color-off-light;
+                    cursor: pointer;
+                    .day {
+                        color: $color-light;
+                    }
+                }
+
+                .day {
+                    font-size: 0.8em;
+                    color: $color-off-light;
+                }
+                .title {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

@@ -9,6 +9,9 @@ import { Testing } from './pages/Testing';
 import './styles/style.css';
 
 const _App: React.FC = () => {
+    useEffect(() => {
+        window.document.title = "The Stable Club at Cantine Field"
+    }, [])
     return (
         <Router>
             <Navbar />

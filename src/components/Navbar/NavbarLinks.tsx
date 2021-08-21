@@ -13,7 +13,10 @@ export const NavbarLinks: React.FC = () => {
     return (
         <nav className='navbar'>
             <NavItem to='/'>Home</NavItem>
+            <i className="bullet">&bull;</i>
             <NavItem to='/book'>Book</NavItem>
+            <i className="bullet">&bull;</i>
+
             <NavItem to='/contact'>Contact</NavItem>
         </nav>
     );

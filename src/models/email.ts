@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
+// eslint-disable-next-line
 import { init, send } from 'emailjs-com';
-import axios from 'axios';
 import { ContactFormData } from '../components/ContactForm';
 
 export const useEmail = () => {

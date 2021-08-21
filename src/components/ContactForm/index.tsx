@@ -53,8 +53,9 @@ export const ContactForm: React.FC = () => {
 
                     <h4 className='fill'>Email: </h4>
                     <input name='email' value={formData['email']} type='email' onChange={handleInputChange} className='fill' placeholder='example@gmail.com' />
-                    <h4 className='fill'>Dates: </h4>
-                    <input name='dates' type='text' value={formData['dates']} onChange={handleInputChange} className='fill' placeholder='Needs to be changed to date input WIP' />
+                    <h4 className='fill'>Date: </h4>
+                    <input name='dates' type='date' value={formData['dates']} onChange={handleInputChange} className='fill' />
+
                     <h4 className='fill'>Comment or Message: </h4>
                     <textarea name='message' id='contact-message' value={formData['message']} onChange={handleInputChange} className='fill' placeholder='Hello!'></textarea>
                     <button className='fill'>Submit</button>

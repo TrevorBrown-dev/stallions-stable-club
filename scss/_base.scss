@@ -17,7 +17,7 @@ https://github.com/oxalorg/sakura
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
-    font-family: sans-serif;
+    font-family: Lato, sans-serif;
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: overlay;
@@ -163,4 +163,8 @@ $width_phone_tiny: 600px;
 
     .page-main {
     }
+}
+.align-bottom {
+    display: flex;
+    align-content: flex-end;
 }

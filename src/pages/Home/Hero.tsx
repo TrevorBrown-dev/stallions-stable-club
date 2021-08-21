@@ -1,14 +1,20 @@
+import { Calendar } from '../../components/Calendar';
 import { ContactForm } from '../../components/ContactForm';
-import { OverlayedImage } from '../../components/OverlayedImage';
+import { SocialBar } from '../../components/SocialBar';
 import { TheStableClubLogo } from '../../components/svgs/TheSableClubLogo';
-import HeroImage from '../../media/Hero.jpg';
 export const Hero: React.FC = () => {
     return (
         <div className='hero crop'>
             <div className="hero-container">
                 <div className="hero-content">
                     <div className="h-logo">
-                        <TheStableClubLogo />
+                        <div className="center-content">
+
+                            <TheStableClubLogo />
+                        </div>
+                    </div>
+                    <div className="h-social">
+                        <SocialBar />
                     </div>
                     <div className="h-tag center-content" style={{ padding: '1em' }}>
                         <h1>Your Tagline!</h1>
@@ -46,9 +52,10 @@ export const Hero: React.FC = () => {
                         </address>
                     </div>
                     <div className="h-form">
-                        <div className="contact-form-container">
-                            <ContactForm />
-                        </div>
+
+                        <Calendar />
+                        {/* <ContactForm /> */}
+
                     </div>
                 </div>
             </div>

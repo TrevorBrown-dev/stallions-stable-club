@@ -25,14 +25,19 @@
             .fill {
                 grid-column: 1/-1;
             }
+            .dates {
+                grid-column: 1/-1;
+                margin: 0 auto;
+                input:first-child {
+                    margin-right: 1em;
+                }
+            }
         }
     }
 }
 
 //The containing element of the form.
 .contact-form-container {
-    height: auto;
-    width: 100%;
     border: 2px solid $color-secondary;
     border-radius: 1.2em;
     background-color: rgba($color-off-light, 0.2);
