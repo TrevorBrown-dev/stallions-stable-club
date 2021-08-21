@@ -17,7 +17,7 @@ export const useCalendar = (calendarID: string): [iCalEvents, React.Dispatch<Rea
     };
     const fetchRemote = async () => {
         axios
-            .get(`https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events/?key=AIzaSyAHwsH4Yvosm9BvxfmOqklmuqmiNO6QuqQ`)
+            .get(`https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events/?key=${process.env['CALENDAR_API_TOKEN']}`)
             .then(({ data }) => {
                 //First we need to format the information properly
                 const obj: { [key: string]: any } = {};
