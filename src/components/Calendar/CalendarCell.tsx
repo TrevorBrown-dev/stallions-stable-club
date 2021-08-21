@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CalendarContext } from "../../../contexts/CalendarContext";
+import { CalendarContext } from "../../contexts/CalendarContext";
 
 interface CalendarCellProps {
     text: string;

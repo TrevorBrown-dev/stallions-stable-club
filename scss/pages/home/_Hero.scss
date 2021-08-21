@@ -86,10 +86,7 @@
         }
 
         .h-form {
-            align-self: center;
-            iframe {
-                height: 30em;
-            }
+            margin-top: 1em;
             @media (max-width: $width_phone) {
                 display: none;
             }
