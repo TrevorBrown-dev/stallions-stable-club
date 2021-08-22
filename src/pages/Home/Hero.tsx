@@ -13,16 +13,16 @@ export const Hero: React.FC = () => {
                             <TheStableClubLogo />
                         </div>
                     </div>
-                    <div className="h-social">
+                    {/* <div className="h-social">
                         <SocialBar />
-                    </div>
+                    </div> */}
                     <div className="h-tag center-content" style={{ padding: '1em' }}>
                         <h1>Your Tagline!</h1>
                     </div>
                     <div className="h-desc">
                         <p style={{ margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae quo molestias, dignissimos nemo deserunt molestiae officia atque ut voluptatum libero fugit animi, eius doloremque? Eveniet, laborum ratione. Molestiae provident obcaecati minima. Dolore et fuga architecto distinctio natus. Ullam, doloribus?</p>
                     </div>
-                    <div className="h-contact">
+                    {/* <div className="h-contact">
                         <div className="center-grid-justified" style={{ paddingBottom: '.5em' }}>
                             <div className="left" style={{ textAlign: 'center' }}>
                                 <h5>Address</h5>
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
                                 </div>
                             </div>
                         </address>
-                    </div>
+                    </div> */}
                     <div className="h-form">
 
                         <Calendar />

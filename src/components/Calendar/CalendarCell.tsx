@@ -17,7 +17,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({ text, day }) => {
     const events = calendar?.events[day];
     return (<div className="calendar-cell" id={day}>
         <div className="cell-text">
-            <div className="day">
+            <div className="day" style={{ padding: '.2em' }}>
                 {text}
             </div>
             {events && events.map(event => <EventRibbon event={event} />

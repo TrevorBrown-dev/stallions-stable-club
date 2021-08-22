@@ -1,5 +1,5 @@
 @mixin background-parralax($h-alpha, $url) {
-    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-secondary, $h-alpha)), url($url);
+    background-image: linear-gradient(rgba($color-dark, $h-alpha), rgba($color-primary, $h-alpha)), url($url);
     background-size: cover;
 
     //These three props make the parallax effect!

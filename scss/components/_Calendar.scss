@@ -23,8 +23,8 @@
         padding: 0 1em;
         margin-right: 1em;
         &:hover {
-            color: $color-primary;
-            border-color: $color-primary;
+            color: $color-off-primary;
+            border-color: $color-off-primary;
         }
         &:active {
             color: $color-off-light;
@@ -48,7 +48,7 @@
                 cursor: pointer;
                 transition: all 0.2s ease;
                 &:hover {
-                    color: $color-primary;
+                    color: $color-off-primary;
                 }
             }
             .arrow-left {

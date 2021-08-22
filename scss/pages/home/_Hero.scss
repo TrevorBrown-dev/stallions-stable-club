@@ -25,23 +25,26 @@
         padding-bottom: 5em;
         .hero-content {
             //This will contain the actual content for the grid once it is properly aligned and set up.
+            max-height: 95vh;
+            height: 95vh;
             padding: 1em 3em;
+            padding-left: 0;
             color: $color-light;
             display: grid;
             grid-template-rows: repeat(10 1fr);
-            grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 1em;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 6em;
             grid-template-areas:
-                'h-logo h-social h-form'
-                'h-logo h-social h-form'
-                'h-logo h-blank h-form'
-                'h-logo h-blank h-form'
-                'h-tag h-blank h-form'
-                'h-tag  h-blank h-form'
-                'h-desc  h-blank h-form'
-                'h-desc h-contact h-form'
-                'h-desc h-contact h-form'
-                'h-desc h-contact h-form';
+                'h-logo h-form'
+                'h-logo h-form'
+                'h-tag h-form'
+                'h-tag h-form'
+                'h-desc h-form'
+                'h-desc h-form'
+                'h-desc h-form'
+                'h-desc h-form'
+                'h-desc h-form'
+                'h--blank h-blank';
 
             @media (max-width: $width_phone) {
                 grid-template-areas:
@@ -60,19 +63,25 @@
 
         .h-logo {
             #stable-logo {
-                height: 20em;
-                width: auto;
+                width: 30em;
+                height: auto;
                 filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
             }
             grid-area: h-logo;
         }
         .h-tag {
+            font-size: 2.6rem;
             @media (max-width: $width_phone) {
                 display: none;
             }
             grid-area: h-tag;
         }
         .h-desc {
+            p {
+                width: 100%;
+                text-align: left;
+                font-size: 2rem;
+            }
             @media (max-width: $width_phone) {
                 display: none;
             }

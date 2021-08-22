@@ -40,8 +40,9 @@
         border: 2px solid $color-off-light;
         border-radius: 0 0 20px 20px;
         padding: 1em;
-        padding-top: 3em;
-        width: 50%;
+        padding-top: 4em;
+        padding-bottom: 0;
+        width: 60%;
         &.close {
             animation: slide-up 0.3s ease forwards;
         }
@@ -50,15 +51,19 @@
         }
 
         .close-button {
+            span {
+                font-size: 1.5em;
+            }
             transition: all 0.2s ease;
             border-radius: none;
             border: none;
+            margin-top: 1em;
             background-color: $color-light;
             color: $color-off-light;
             width: 100%;
             padding: 0.2em;
             &:hover {
-                color: $color-primary;
+                color: $color-off-primary;
                 transform: translateY(-5%);
             }
         }

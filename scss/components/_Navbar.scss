@@ -2,21 +2,22 @@
     position: absolute;
     z-index: 10;
     width: 100vw;
-    background-color: rgba($color-secondary, 0.6);
+    background-color: rgba($color-primary, 1);
     backdrop-filter: blur(1em);
     color: $color-light;
     .bullet {
         font-weight: 100;
         user-select: none;
         display: block;
-        width: 2em;
+        color: transparent;
+        width: 4em;
         text-align: center;
     }
     #svg-lines {
         fill: $color-light;
     }
     a:hover {
-        color: $color-primary;
+        color: $color-secondary-light;
         text-decoration: none;
     }
     height: 5vh;
@@ -46,6 +47,7 @@
 }
 
 .navbar {
+    font-size: 1.3em;
     $nav-open-speed: 0.5s;
     $nav-open-delay: 0.2s;
     width: 0%;
@@ -56,6 +58,4 @@
     }
     display: flex;
     justify-content: center;
-    .nav-item:not(:last-child) {
-    }
 }

@@ -1,4 +1,7 @@
 svg#stable-logo {
-    --fill-primary: #{$color-primary};
-    --fill-secondary: #{$color-off-light};
+    --fill-primary: #{$color-light};
+    --fill-secondary: #{darken($color-off-light, 35%)};
+    --stroke-primary: #{darken($color-off-light, 35%)};
+    // --stroke-primary: #{$color-primary};
+    --stroke-width: 0px;
 }

@@ -17,7 +17,7 @@ https://github.com/oxalorg/sakura
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  font-family: Lato, sans-serif;
+  font-family: Montserrat, sans-serif;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: overlay;
@@ -201,8 +201,10 @@ h6 {
 }
 
 svg#stable-logo {
-  --fill-primary: #fa7d09;
-  --fill-secondary: #cccccc;
+  --fill-primary: #ebebeb;
+  --fill-secondary: #5f5f5f;
+  --stroke-primary: #5f5f5f;
+  --stroke-width: 0px;
 }
 
 .social-media a:not(:last-child) {
@@ -210,10 +212,10 @@ svg#stable-logo {
 }
 .social-media svg {
   width: 3em;
-  fill: #fff;
+  fill: #ebebeb;
 }
 .social-media svg:hover {
-  fill: #fa7d09;
+  fill: #0689db;
   cursor: pointer;
 }
 
@@ -221,9 +223,9 @@ svg#stable-logo {
   position: absolute;
   z-index: 10;
   width: 100vw;
-  background-color: rgba(47, 37, 25, 0.6);
+  background-color: #02324f;
   backdrop-filter: blur(1em);
-  color: #fff;
+  color: #ebebeb;
   height: 5vh;
   font-size: 1.2em;
   padding: 1em;
@@ -236,14 +238,15 @@ svg#stable-logo {
   font-weight: 100;
   user-select: none;
   display: block;
-  width: 2em;
+  color: transparent;
+  width: 4em;
   text-align: center;
 }
 .nav-container #svg-lines {
-  fill: #fff;
+  fill: #ebebeb;
 }
 .nav-container a:hover {
-  color: #fa7d09;
+  color: #d76779;
   text-decoration: none;
 }
 
@@ -264,6 +267,7 @@ svg#stable-logo {
   }
 }
 .navbar {
+  font-size: 1.3em;
   width: 0%;
   overflow: hidden;
   animation: open 0.5s ease 0.2s forwards;
@@ -275,16 +279,17 @@ svg#stable-logo {
     animation: open-wide 0.5s ease 0.2s forwards;
   }
 }
+
 /* custom scrollbar */
 html > ::-webkit-scrollbar {
   position: absolute;
   width: 0.8em;
-  background-color: #4d4d4d;
+  background-color: #1a1a1a;
 }
 
 ::-webkit-scrollbar {
   width: 0.5em;
-  background-color: #4d4d4d;
+  background-color: #1a1a1a;
 }
 
 .description > ::-webkit-scrollbar-thumb {
@@ -292,32 +297,32 @@ html > ::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #999999;
+  background-color: #858585;
   border: 1em solid transparent;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #cccccc;
+  background-color: #b8b8b8;
 }
 
 button {
   font-size: 1.2em;
-  background-color: #2f2519;
-  color: #fff;
+  background-color: #832232;
+  color: #ebebeb;
   border-radius: 10px;
-  border: 2px solid #72593c;
+  border: 2px solid #cd3e56;
   text-align: center;
   cursor: pointer;
 }
 button:hover {
-  border-color: #fa7d09;
-  color: #fa7d09;
+  border-color: #02324f;
+  color: #02324f;
 }
 
 .event-ribbon {
-  background-color: #fb973b;
+  background-color: #035181;
   width: 100%;
-  color: #fff;
+  color: #ebebeb;
   font-size: 0.6em;
   padding: 0.1em 1em;
   border-radius: 4px;
@@ -329,7 +334,7 @@ button:hover {
 }
 .event-ribbon:hover {
   cursor: pointer;
-  background-color: #fa7d09;
+  background-color: #02324f;
   transform: scale(105%);
 }
 .event-ribbon:active {
@@ -365,7 +370,7 @@ button:hover {
 }
 .calendar-modal {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(235, 235, 235, 0.5);
   color: #000;
   width: 100%;
   height: 70vh;
@@ -375,12 +380,13 @@ button:hover {
   position: absolute;
   left: 45%;
   transform: translateX(-50%);
-  background-color: #fff;
-  border: 2px solid #cccccc;
+  background-color: #ebebeb;
+  border: 2px solid #b8b8b8;
   border-radius: 0 0 20px 20px;
   padding: 1em;
-  padding-top: 3em;
-  width: 50%;
+  padding-top: 4em;
+  padding-bottom: 0;
+  width: 60%;
 }
 .calendar-modal .content.close {
   animation: slide-up 0.3s ease forwards;
@@ -392,13 +398,17 @@ button:hover {
   transition: all 0.2s ease;
   border-radius: none;
   border: none;
-  background-color: #fff;
-  color: #cccccc;
+  margin-top: 1em;
+  background-color: #ebebeb;
+  color: #b8b8b8;
   width: 100%;
   padding: 0.2em;
 }
+.calendar-modal .content .close-button span {
+  font-size: 1.5em;
+}
 .calendar-modal .content .close-button:hover {
-  color: #fa7d09;
+  color: #0689db;
   transform: translateY(-5%);
 }
 
@@ -430,10 +440,10 @@ button:hover {
   padding: 1em;
   width: 40rem;
   height: 10rem;
-  border: 3px solid #2f2519;
+  border: 3px solid #832232;
   border-radius: 1rem;
-  background-color: rgba(14, 11, 7, 0.8);
-  color: #fff;
+  background-color: rgba(91, 23, 35, 0.8);
+  color: #ebebeb;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "msg-title" "msg-content";
@@ -450,31 +460,31 @@ button:hover {
   width: 100%;
   height: 1rem;
   bottom: 0;
-  background-color: #fa7d09;
+  background-color: #02324f;
   animation: close-message ease-in-out forwards;
 }
 
 input {
   all: unset;
   transition: all 0.3s ease;
-  color: #0e0b07;
-  background-color: #fff;
-  border: 2px solid #72593c;
+  color: #5b1723;
+  background-color: #ebebeb;
+  border: 2px solid #cd3e56;
   border-radius: 10px;
   padding: 0.5em 1em;
   font-size: 1.2em;
 }
 input:focus {
-  border-color: #fa7d09;
+  border-color: #02324f;
   transform: scale(1.01);
 }
 
 textarea {
   all: unset;
   transition: all 0.3s ease;
-  color: #0e0b07;
-  background-color: #fff;
-  border: 2px solid #72593c;
+  color: #5b1723;
+  background-color: #ebebeb;
+  border: 2px solid #cd3e56;
   border-radius: 10px;
   padding: 0.5em 1em;
   font-size: 1.2em;
@@ -482,7 +492,7 @@ textarea {
   height: auto;
 }
 textarea:focus {
-  border-color: #fa7d09;
+  border-color: #02324f;
   transform: scale(1.01);
 }
 
@@ -490,10 +500,10 @@ textarea:focus {
   position: relative;
   overflow-x: hidden;
   padding: 2em;
-  border: 2px solid #cccccc;
+  border: 2px solid #b8b8b8;
   border-radius: 30px;
   border-radius: 30px 0 0 30px;
-  background-color: #fff;
+  background-color: #ebebeb;
   color: #000;
   align-items: start;
   font-size: 1.7vh !important;
@@ -505,30 +515,30 @@ textarea:focus {
 }
 .calendar .today-button {
   text-align: center;
-  background-color: #fff;
-  border: 2px solid #cccccc;
-  color: #cccccc;
+  background-color: #ebebeb;
+  border: 2px solid #b8b8b8;
+  color: #b8b8b8;
   transition: all 0.3s ease;
   padding: 0 1em;
   margin-right: 1em;
 }
 .calendar .today-button:hover {
-  color: #fa7d09;
-  border-color: #fa7d09;
+  color: #0689db;
+  border-color: #0689db;
 }
 .calendar .today-button:active {
-  color: #cccccc;
-  border-color: #cccccc;
+  color: #b8b8b8;
+  border-color: #b8b8b8;
 }
 .calendar .calendar-month {
   padding: 0.6em;
   text-align: center;
 }
 .calendar .calendar-month .year {
-  color: #cccccc;
+  color: #b8b8b8;
 }
 .calendar .calendar-month .calendar-arrows {
-  color: #cccccc;
+  color: #b8b8b8;
   margin-right: 0.7em;
   font-size: 1.8em;
   font-weight: bold;
@@ -539,7 +549,7 @@ textarea:focus {
   transition: all 0.2s ease;
 }
 .calendar .calendar-month .calendar-arrows div:hover {
-  color: #fa7d09;
+  color: #0689db;
 }
 .calendar .calendar-month .calendar-arrows .arrow-left {
   margin-right: 0.2em;
@@ -561,8 +571,8 @@ textarea:focus {
 .calendar .calendar-grid .calendar-row .calendar-cell {
   word-wrap: break-word;
   overflow-x: hidden;
-  border: 2px solid #cccccc;
-  background-color: #fff;
+  border: 2px solid #b8b8b8;
+  background-color: #ebebeb;
   color: #000;
   width: 7em;
   min-height: 7em;
@@ -574,22 +584,22 @@ textarea:focus {
   border-right: none;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell:hover {
-  color: #fa7d09;
+  color: #02324f;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell:hover .day {
-  color: #fa7d09;
+  color: #02324f;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell .day {
   font-size: 0.8em;
-  color: #cccccc;
+  color: #b8b8b8;
 }
 
 .spanning-card {
   height: 10em;
-  background-color: rgba(47, 37, 25, 0.5);
+  background-color: rgba(131, 34, 50, 0.5);
   border-top: 2px;
   border-bottom: 2px;
-  border: solid #0e0b07;
+  border: solid #5b1723;
   width: 100%;
 }
 
@@ -622,22 +632,22 @@ textarea:focus {
 }
 
 .contact-form-container {
-  border: 2px solid #2f2519;
+  border: 2px solid #832232;
   border-radius: 1.2em;
-  background-color: rgba(204, 204, 204, 0.2);
+  background-color: rgba(184, 184, 184, 0.2);
   backdrop-filter: blur(0.2em);
   padding: 2.5em;
 }
 
 .home {
-  color: #fff;
-  background-color: #0e0b07;
+  color: #ebebeb;
+  background-color: #1a1a1a;
 }
 
 #stable-logo {
-  color: #fa7d09;
-  fill: #fa7d09;
-  filter: drop-shadow(0px 0px 5px rgba(174, 141, 102, 0.3));
+  color: #02324f;
+  fill: #02324f;
+  filter: drop-shadow(0px 0px 5px rgba(226, 143, 157, 0.3));
   width: 100%;
   height: 100%;
 }
@@ -645,7 +655,7 @@ textarea:focus {
 .hero {
   height: 100vh;
   overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(47, 37, 25, 0.7)), url("../media/Hero.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/Hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -659,13 +669,16 @@ textarea:focus {
   padding-bottom: 5em;
 }
 .hero .hero-container .hero-content {
+  max-height: 95vh;
+  height: 95vh;
   padding: 1em 3em;
-  color: #fff;
+  padding-left: 0;
+  color: #ebebeb;
   display: grid;
   grid-template-rows: repeat(10 1fr);
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 1em;
-  grid-template-areas: "h-logo h-social h-form" "h-logo h-social h-form" "h-logo h-blank h-form" "h-logo h-blank h-form" "h-tag h-blank h-form" "h-tag  h-blank h-form" "h-desc  h-blank h-form" "h-desc h-contact h-form" "h-desc h-contact h-form" "h-desc h-contact h-form";
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6em;
+  grid-template-areas: "h-logo h-form" "h-logo h-form" "h-tag h-form" "h-tag h-form" "h-desc h-form" "h-desc h-form" "h-desc h-form" "h-desc h-form" "h-desc h-form" "h--blank h-blank";
 }
 @media (max-width: 850px) {
   .hero .hero-container .hero-content {
@@ -676,11 +689,12 @@ textarea:focus {
   grid-area: h-logo;
 }
 .hero .hero-container .h-logo #stable-logo {
-  height: 20em;
-  width: auto;
-  filter: drop-shadow(3px 3px 5px rgba(204, 204, 204, 0.2));
+  width: 30em;
+  height: auto;
+  filter: drop-shadow(3px 3px 5px rgba(184, 184, 184, 0.2));
 }
 .hero .hero-container .h-tag {
+  font-size: 2.6rem;
   grid-area: h-tag;
 }
 @media (max-width: 850px) {
@@ -690,6 +704,11 @@ textarea:focus {
 }
 .hero .hero-container .h-desc {
   grid-area: h-desc;
+}
+.hero .hero-container .h-desc p {
+  width: 100%;
+  text-align: left;
+  font-size: 2rem;
 }
 @media (max-width: 850px) {
   .hero .hero-container .h-desc {
@@ -723,7 +742,7 @@ textarea:focus {
 }
 
 .testimonials {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(47, 37, 25, 0.7)), url("../media/testing.JPG");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/testing.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
