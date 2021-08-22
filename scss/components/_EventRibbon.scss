@@ -1,0 +1,28 @@
+.event-ribbon {
+    background-color: lighten($color-primary, 10%);
+    width: 100%;
+    color: $color-light;
+    font-size: 0.6em;
+    padding: 0.1em 1em;
+    border-radius: 4px;
+    text-align: right;
+    transition: all 0.2s ease;
+    &:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-primary;
+        transform: scale(105%);
+    }
+
+    &:active {
+        transition: all 0.1s ease;
+        transform: scale(100%);
+    }
+    .title {
+        user-select: none;
+        font-weight: bold;
+    }
+}

@@ -1,4 +1,6 @@
 .calendar {
+    position: relative;
+    overflow-x: hidden;
     padding: 2em;
     border: 2px solid $color-off-light;
     border-radius: 30px;
@@ -6,7 +8,8 @@
     background-color: $color-light;
     color: $color-dark;
     align-items: start;
-    max-height: 75vh;
+    font-size: 1.7vh !important;
+    max-height: 80vh;
     overflow-y: auto;
     .calendar-title {
         text-align: center;
@@ -63,12 +66,14 @@
         }
         .calendar-row {
             display: grid;
-            $cell-size: 6em;
+            $cell-size: 7em;
             grid-template-columns: repeat(7, 1fr);
             &:not(:last-child) > .calendar-cell {
                 border-bottom: none;
             }
             .calendar-cell {
+                word-wrap: break-word;
+                overflow-x: hidden;
                 border: 2px solid $color-off-light;
                 background-color: $color-light;
                 color: $color-dark;
@@ -76,14 +81,13 @@
                 min-height: $cell-size;
                 max-height: 15em;
                 transition: all 0.2s ease;
+
                 &:not(:last-child) {
                     border-right: none;
                 }
                 overflow-y: auto;
 
                 &:hover {
-                    // background-color: $color-off-light;
-                    cursor: pointer;
                     color: $color-primary;
                     .day {
                         color: $color-primary;
@@ -93,9 +97,6 @@
                 .day {
                     font-size: 0.8em;
                     color: $color-off-light;
-                }
-                .title {
-                    font-weight: bold;
                 }
             }
         }

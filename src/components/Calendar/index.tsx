@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import moment from "moment";
 import { CalendarCell } from "./CalendarCell";
 import { CalendarContext, CalendarEventsProps } from "../../contexts/CalendarContext";
-import { useCalendar } from "../../models/calendar";
+import { CalendarEvent, useCalendar } from "../../models/calendar";
+import { CalendarModalContext } from "../../contexts/CalendarModalContext";
+import { CalendarModal } from "./CalendarModal";
 const PrivateCalendar: React.FC = () => {
 
 
@@ -42,12 +44,10 @@ const PrivateCalendar: React.FC = () => {
         return grid;
     }, [currentMoment, setMoment]);
 
-
+    const modal = useContext(CalendarModalContext);
     return (
         <div className="calendar" style={{ fontSize: '1em' }}>
-            <header className="calendar-title">
-                {/* <h3>The Stable Club</h3> */}
-            </header>
+            {modal?.eventInModal && <CalendarModal event={modal.eventInModal} />}
             <div className="calendar-month flex" >
                 <div className="calendar-arrows flex">
                     <div className="arrow-left hoverable-half"
@@ -74,22 +74,19 @@ const PrivateCalendar: React.FC = () => {
 
 
 export const Calendar = () => {
-    const [iCalEvents, setIcalEvents] = useCalendar('mq933te8jm95j3ea17i7tp25cg@group.calendar.google.com');
-    const [events, setEvents] = useState<CalendarEventsProps>({
-        "08/20/2021": { title: 'Home Game', text: 'The Stallions vs the Devils', times: ["4pm", "9pm"] },
-        "08/25/2021": { title: 'Wine Tasting', text: 'Wine tasting courtesy of Vineyard Vines', times: ["11am", "3pm"] },
-        "08/30/2021": { title: 'After Game Party', text: 'Come celebrate with us after the game', times: ["5pm", "9pm"] },
-    });
+    const [iCalEvents,] = useCalendar('mq933te8jm95j3ea17i7tp25cg@group.calendar.google.com');
+    const [events, setEvents] = useState<CalendarEventsProps>(iCalEvents);
+    const [eventInModal, setEventInModal] = useState<CalendarEvent | null>(null);
     useEffect(() => {
-        const realEvents: CalendarEventsProps = {};
-        for (const event in iCalEvents) {
-            const calEvent = iCalEvents[event];
-            realEvents[event] = {
-                text: calEvent.description,
-                title: calEvent.summary,
-            }
-        }
-        setEvents({ ...realEvents });
+        setEvents({ ...iCalEvents });
     }, [iCalEvents])
-    return <CalendarContext.Provider value={{ events, setEvents }}><PrivateCalendar /></CalendarContext.Provider>
+
+    return (
+        <CalendarModalContext.Provider value={{ eventInModal, setEventInModal }}>
+
+            <CalendarContext.Provider value={{ events, setEvents }}>
+                <PrivateCalendar />
+            </CalendarContext.Provider>
+        </CalendarModalContext.Provider>
+    );
 }

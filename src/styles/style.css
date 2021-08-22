@@ -314,6 +314,94 @@ button:hover {
   color: #fa7d09;
 }
 
+.event-ribbon {
+  background-color: #fb973b;
+  width: 100%;
+  color: #fff;
+  font-size: 0.6em;
+  padding: 0.1em 1em;
+  border-radius: 4px;
+  text-align: right;
+  transition: all 0.2s ease;
+}
+.event-ribbon:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+.event-ribbon:hover {
+  cursor: pointer;
+  background-color: #fa7d09;
+  transform: scale(105%);
+}
+.event-ribbon:active {
+  transition: all 0.1s ease;
+  transform: scale(100%);
+}
+.event-ribbon .title {
+  user-select: none;
+  font-weight: bold;
+}
+
+@keyframes slide-down {
+  0% {
+    top: -40%;
+  }
+  90% {
+    top: -2%;
+  }
+  100% {
+    top: -5%;
+  }
+}
+@keyframes slide-up {
+  0% {
+    top: -5%;
+  }
+  10% {
+    top: -2%;
+  }
+  100% {
+    top: -40%;
+  }
+}
+.calendar-modal {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  width: 100%;
+  height: 70vh;
+}
+.calendar-modal .content {
+  animation: slide-down 0.3s ease forwards;
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 2px solid #cccccc;
+  border-radius: 0 0 20px 20px;
+  padding: 1em;
+  padding-top: 3em;
+  width: 50%;
+}
+.calendar-modal .content.close {
+  animation: slide-up 0.3s ease forwards;
+}
+.calendar-modal .content .summary {
+  text-align: center;
+}
+.calendar-modal .content .close-button {
+  transition: all 0.2s ease;
+  border-radius: none;
+  border: none;
+  background-color: #fff;
+  color: #cccccc;
+  width: 100%;
+  padding: 0.2em;
+}
+.calendar-modal .content .close-button:hover {
+  color: #fa7d09;
+  transform: translateY(-5%);
+}
+
 @keyframes close-message {
   from {
     width: 100%;
@@ -399,6 +487,8 @@ textarea:focus {
 }
 
 .calendar {
+  position: relative;
+  overflow-x: hidden;
   padding: 2em;
   border: 2px solid #cccccc;
   border-radius: 30px;
@@ -406,7 +496,8 @@ textarea:focus {
   background-color: #fff;
   color: #000;
   align-items: start;
-  max-height: 75vh;
+  font-size: 1.7vh !important;
+  max-height: 80vh;
   overflow-y: auto;
 }
 .calendar .calendar-title {
@@ -468,11 +559,13 @@ textarea:focus {
   border-bottom: none;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell {
+  word-wrap: break-word;
+  overflow-x: hidden;
   border: 2px solid #cccccc;
   background-color: #fff;
   color: #000;
-  width: 6em;
-  min-height: 6em;
+  width: 7em;
+  min-height: 7em;
   max-height: 15em;
   transition: all 0.2s ease;
   overflow-y: auto;
@@ -481,7 +574,6 @@ textarea:focus {
   border-right: none;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell:hover {
-  cursor: pointer;
   color: #fa7d09;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell:hover .day {
@@ -490,9 +582,6 @@ textarea:focus {
 .calendar .calendar-grid .calendar-row .calendar-cell .day {
   font-size: 0.8em;
   color: #cccccc;
-}
-.calendar .calendar-grid .calendar-row .calendar-cell .title {
-  font-weight: bold;
 }
 
 .spanning-card {

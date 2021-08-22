@@ -1,11 +1,7 @@
 import { createContext } from 'react';
-interface EventProps {
-    times?: [string, string];
-    title?: string;
-    text?: string;
-}
+import { CalendarEvent } from '../models/calendar';
 export interface CalendarEventsProps {
-    [key: string]: EventProps;
+    [key: string]: CalendarEvent[];
 }
 export interface CalendarContextProps {
     events: CalendarEventsProps;

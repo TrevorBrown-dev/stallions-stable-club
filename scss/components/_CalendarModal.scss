@@ -1,0 +1,66 @@
+@keyframes slide-down {
+    0% {
+        top: -40%;
+    }
+
+    90% {
+        top: -2%;
+    }
+
+    100% {
+        top: -5%;
+    }
+}
+@keyframes slide-up {
+    0% {
+        top: -5%;
+    }
+
+    10% {
+        top: -2%;
+    }
+
+    100% {
+        top: -40%;
+    }
+}
+
+.calendar-modal {
+    position: absolute;
+    background-color: rgba($color-light, 0.5);
+    color: $color-dark;
+    width: 100%;
+    height: 70vh;
+    .content {
+        animation: slide-down 0.3s ease forwards;
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
+        background-color: $color-light;
+        border: 2px solid $color-off-light;
+        border-radius: 0 0 20px 20px;
+        padding: 1em;
+        padding-top: 3em;
+        width: 50%;
+        &.close {
+            animation: slide-up 0.3s ease forwards;
+        }
+        .summary {
+            text-align: center;
+        }
+
+        .close-button {
+            transition: all 0.2s ease;
+            border-radius: none;
+            border: none;
+            background-color: $color-light;
+            color: $color-off-light;
+            width: 100%;
+            padding: 0.2em;
+            &:hover {
+                color: $color-primary;
+                transform: translateY(-5%);
+            }
+        }
+    }
+}
