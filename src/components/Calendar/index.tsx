@@ -27,11 +27,11 @@ const PrivateCalendar: React.FC = () => {
             for (let x = 0; x < 7; x++) {
                 if ((dayCount === 0 && x === firstDayOfMonth) || (dayCount > 0 && dayCount < daysInMonth)) {
                     const date = moment(`${currentMoment.month() + 1}/${dayCount + 1}/${currentMoment.year()}`).format('MM/DD/YYYY')
-                    row.push(<CalendarCell day={date} text={`${dayCount + 1}`} key={date} />);
+                    row.push(<CalendarCell day={date} text={`${dayCount + 1}`} key={date} date={date} />);
                     dayCount++;
                 } else {
 
-                    row.push(<CalendarCell day="" text={``} key={`${x}-${y}`} />);
+                    row.push(<CalendarCell day="" text={``} key={`${x}-${y}`} date="" />);
                 }
 
             }

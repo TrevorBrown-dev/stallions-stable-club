@@ -321,13 +321,33 @@ button:hover {
 
 .event-ribbon {
   background-color: #035181;
+  display: flex;
   width: 100%;
   color: #ebebeb;
   font-size: 0.6em;
-  padding: 0.1em 1em;
+  padding: 0.1em 0.2em;
   border-radius: 4px;
-  text-align: right;
   transition: all 0.2s ease;
+  align-content: space-between;
+  white-space: nowrap;
+}
+.event-ribbon.timed {
+  border-radius: 8px;
+  background-color: transparent;
+  color: #000;
+}
+.event-ribbon.timed:hover {
+  background-color: rgba(210, 210, 210, 0.8);
+}
+.event-ribbon .title {
+  margin-left: 0.4em;
+  font-size: 1em;
+}
+.event-ribbon .bullet {
+  color: #0689db;
+  font-size: 5em;
+  padding-top: 0.05em;
+  line-height: 0%;
 }
 .event-ribbon:not(:last-child) {
   margin-bottom: 0.5em;

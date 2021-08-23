@@ -25,6 +25,7 @@ interface CalendarDateObj {
 }
 type UnknownObject = { [key: string]: any };
 const mapItem = (item: UnknownObject): CalendarEvent => {
+    console.log(item);
     const event: CalendarEvent = {
         attachments: item?.attachments || [],
         id: item?.id || '',
