@@ -46,10 +46,16 @@
         &.close {
             animation: slide-up 0.3s ease forwards;
         }
+        .times {
+            text-align: center;
+        }
         .summary {
             text-align: center;
         }
-
+        .description {
+            word-wrap: normal;
+            word-break: break-all;
+        }
         .close-button {
             span {
                 font-size: 1.5em;

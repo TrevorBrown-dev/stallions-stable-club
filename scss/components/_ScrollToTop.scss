@@ -1,0 +1,20 @@
+.scroll-to-top {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    right: 1em;
+
+    padding: 0.5em;
+    background-color: transparent;
+    $scroll-primary-color: rgba($color-light, 0.5);
+    color: $scroll-primary-color;
+    border: 2px solid $scroll-primary-color;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        $scroll-primary-color: $color-light;
+        color: $scroll-primary-color;
+        border: 2px solid $scroll-primary-color;
+    }
+}

@@ -58,7 +58,7 @@ export const ContactForm: React.FC = () => {
 
                     <h4 className='fill'>Comment or Message: </h4>
                     <textarea name='message' id='contact-message' value={formData['message']} onChange={handleInputChange} className='fill' placeholder='Hello!'></textarea>
-                    <button className='fill'>Submit</button>
+                    <button className='fill contact-button'>Submit</button>
                 </div>
             </fieldset>
         </form>

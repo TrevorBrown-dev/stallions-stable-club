@@ -9,8 +9,9 @@
     font-size: 1.2em;
 
     &:focus {
-        border-color: $color-primary;
+        border-color: $color-off-primary;
         transform: scale(1.01);
+        box-shadow: 2px 0px 20px 10px rgba($color-dark, 0.5);
     }
 }
 

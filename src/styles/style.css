@@ -202,8 +202,8 @@ h6 {
 
 svg#stable-logo {
   --fill-primary: #ebebeb;
-  --fill-secondary: #5f5f5f;
-  --stroke-primary: #5f5f5f;
+  --fill-secondary: #02324f;
+  --stroke-primary: var(--fill-secondary);
   --stroke-width: 0px;
 }
 
@@ -280,6 +280,15 @@ svg#stable-logo {
   }
 }
 
+.footer {
+  background-color: #02324f;
+  color: #ebebeb;
+  padding: 1em;
+}
+.footer .social {
+  margin-bottom: 0.7em;
+}
+
 /* custom scrollbar */
 html > ::-webkit-scrollbar {
   position: absolute;
@@ -305,18 +314,18 @@ html > ::-webkit-scrollbar {
   background-color: #b8b8b8;
 }
 
-button {
+button.contact-button {
   font-size: 1.2em;
   background-color: #832232;
   color: #ebebeb;
   border-radius: 10px;
-  border: 2px solid #cd3e56;
+  border: 2px solid;
+  border-color: #cd3e56;
   text-align: center;
   cursor: pointer;
 }
-button:hover {
-  border-color: #02324f;
-  color: #02324f;
+button.contact-button:hover {
+  border-color: #ebebeb;
 }
 
 .event-ribbon {
@@ -411,8 +420,15 @@ button:hover {
 .calendar-modal .content.close {
   animation: slide-up 0.3s ease forwards;
 }
+.calendar-modal .content .times {
+  text-align: center;
+}
 .calendar-modal .content .summary {
   text-align: center;
+}
+.calendar-modal .content .description {
+  word-wrap: normal;
+  word-break: break-all;
 }
 .calendar-modal .content .close-button {
   transition: all 0.2s ease;
@@ -484,6 +500,24 @@ button:hover {
   animation: close-message ease-in-out forwards;
 }
 
+.scroll-to-top {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 1em;
+  padding: 0.5em;
+  background-color: transparent;
+  color: rgba(235, 235, 235, 0.5);
+  border: 2px solid rgba(235, 235, 235, 0.5);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.scroll-to-top:hover {
+  color: #ebebeb;
+  border: 2px solid #ebebeb;
+}
+
 input {
   all: unset;
   transition: all 0.3s ease;
@@ -495,8 +529,9 @@ input {
   font-size: 1.2em;
 }
 input:focus {
-  border-color: #02324f;
+  border-color: #0689db;
   transform: scale(1.01);
+  box-shadow: 2px 0px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
 textarea {
@@ -512,8 +547,9 @@ textarea {
   height: auto;
 }
 textarea:focus {
-  border-color: #02324f;
+  border-color: #0689db;
   transform: scale(1.01);
+  box-shadow: 2px 0px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
 .calendar {
@@ -537,6 +573,8 @@ textarea:focus {
   text-align: center;
   background-color: #ebebeb;
   border: 2px solid #b8b8b8;
+  padding: 1em 0.5em;
+  border-radius: 10px;
   color: #b8b8b8;
   transition: all 0.3s ease;
   padding: 0 1em;
@@ -590,7 +628,7 @@ textarea:focus {
 }
 .calendar .calendar-grid .calendar-row .calendar-cell {
   word-wrap: break-word;
-  overflow-x: hidden;
+  overflow: hidden;
   border: 2px solid #b8b8b8;
   background-color: #ebebeb;
   color: #000;
@@ -599,6 +637,9 @@ textarea:focus {
   max-height: 15em;
   transition: all 0.2s ease;
   overflow-y: auto;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell .cell-text {
+  overflow: hidden;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell:not(:last-child) {
   border-right: none;
@@ -610,8 +651,16 @@ textarea:focus {
   color: #02324f;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell .day {
+  padding: 0.5em 0;
+  text-align: center;
   font-size: 0.8em;
   color: #b8b8b8;
+}
+.calendar .calendar-grid .calendar-row .calendar-cell .day#today span {
+  background-color: #0689db;
+  color: #ebebeb;
+  border-radius: 100px;
+  padding: 0.2em;
 }
 
 .spanning-card {
@@ -686,6 +735,7 @@ textarea:focus {
 }
 .hero .hero-container {
   padding-top: 5vh;
+  padding-left: 1em;
   padding-bottom: 5em;
 }
 .hero .hero-container .hero-content {
@@ -761,7 +811,7 @@ textarea:focus {
   }
 }
 
-.testimonials {
+.contact-us {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/testing.JPG");
   background-size: cover;
   background-repeat: no-repeat;

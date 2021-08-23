@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/Footer/ScrollToTop';
 import { MessagePopup } from './components/MessagePopup';
 import { Navbar } from './components/Navbar';
 import { MessageContext, MessageContextProps, MessageProps } from './contexts/MessageContext';
@@ -10,11 +12,12 @@ import './styles/style.css';
 
 const _App: React.FC = () => {
     useEffect(() => {
-        window.document.title = "The Stable Club at Cantine Field"
-    }, [])
+        window.document.title = 'The Stable Club at Cantine Field';
+    }, []);
     return (
         <Router>
             <Navbar />
+            <ScrollToTop />
             <Route path='/' exact>
                 <Home />
             </Route>
@@ -32,6 +35,7 @@ const _App: React.FC = () => {
                     </div>
                 </div>
             </Route>
+            <Footer />
         </Router>
     );
 };

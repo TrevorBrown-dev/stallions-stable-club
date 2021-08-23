@@ -21,7 +21,7 @@
     .hero-container {
         //This is the true container for the content. It will have a padding at the top to account for the 5vh covered by the nav.
         padding-top: 5vh;
-
+        padding-left: 1em;
         padding-bottom: 5em;
         .hero-content {
             //This will contain the actual content for the grid once it is properly aligned and set up.

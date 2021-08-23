@@ -1,11 +1,11 @@
 import HeroImage from '../../media/Hero.jpg';
 import { Hero } from './Hero';
-import { Testimonials } from './Testimonials';
+import { ContactUs } from './ContactUs';
 export const Home: React.FC = () => {
     return (
-        <div className="home">
+        <div className='home'>
             <Hero />
-            <Testimonials />
-        </div >
+            <ContactUs />
+        </div>
     );
 };
