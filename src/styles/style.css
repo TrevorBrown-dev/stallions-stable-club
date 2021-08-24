@@ -314,6 +314,10 @@ html > ::-webkit-scrollbar {
   background-color: #b8b8b8;
 }
 
+button {
+  cursor: pointer !important;
+}
+
 button.contact-button {
   font-size: 1.2em;
   background-color: #832232;
@@ -325,6 +329,7 @@ button.contact-button {
   cursor: pointer;
 }
 button.contact-button:hover {
+  cursor: pointer;
   border-color: #ebebeb;
 }
 

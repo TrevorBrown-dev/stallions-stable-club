@@ -21,13 +21,6 @@ const _App: React.FC = () => {
             <Route path='/' exact>
                 <Home />
             </Route>
-            <Route path='/contact' exact>
-                <div className='page-main-container'>
-                    <div className='page-main'>
-                        <Contact />
-                    </div>
-                </div>
-            </Route>
             <Route path='/testing' exact>
                 <div className='page-main-container'>
                     <div className='page-main'>
