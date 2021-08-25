@@ -1,6 +1,5 @@
 .calendar {
     position: relative;
-    overflow-x: hidden;
     padding: 2em;
     border: 2px solid $color-off-light;
     border-radius: 30px;
@@ -9,8 +8,8 @@
     color: $color-dark;
     align-items: start;
     font-size: 1.7vh !important;
-    max-height: 80vh;
     overflow-y: auto;
+    width: 100%;
     .calendar-title {
         text-align: center;
     }

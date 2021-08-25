@@ -7,26 +7,27 @@ export const Hero: React.FC = () => {
         <header className='hero crop'>
             <div className='hero-container'>
                 <div className='hero-content'>
-                    <div className='h-logo'>
-                        <div className='center-content'>
+                    <div className='left-column'>
+                        <div className='h-logo'>
                             <TheStableClubLogo />
                         </div>
-                    </div>
-                    {/* <div className="h-social">
+                        {/* <div className="h-social">
                         <SocialBar />
                     </div> */}
-                    <div className='h-tag center-content' style={{ padding: '1em' }}>
-                        <h1>Your Tagline!</h1>
+                        <div className='h-tag'>
+                            <h1>Your Tagline!</h1>
+                        </div>
+                        <div className='h-desc'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae quo molestias, dignissimos nemo deserunt molestiae officia atque ut voluptatum libero fugit
+                                animi, eius doloremque? Eveniet, laborum ratione. Molestiae provident obcaecati minima. Dolore et fuga architecto distinctio natus. Ullam, doloribus?
+                            </p>
+                        </div>
                     </div>
-                    <div className='h-desc'>
-                        <p style={{ margin: '0 auto' }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae quo molestias, dignissimos nemo deserunt molestiae officia atque ut voluptatum libero fugit animi,
-                            eius doloremque? Eveniet, laborum ratione. Molestiae provident obcaecati minima. Dolore et fuga architecto distinctio natus. Ullam, doloribus?
-                        </p>
-                    </div>
-
-                    <div className='h-form'>
-                        <Calendar />
+                    <div className='right-column'>
+                        <div className='h-form'>
+                            <Calendar />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,8 +8,6 @@
 //The styling for the background image.
 
 .hero {
-    height: 100vh;
-    overflow: hidden;
     @include background-parralax(0.7, '../media/Hero.webp');
 
     //This will be for a nice looking crop on the image
@@ -25,87 +23,38 @@
         padding-bottom: 5em;
         .hero-content {
             //This will contain the actual content for the grid once it is properly aligned and set up.
-            max-height: 95vh;
-            height: 95vh;
             padding: 1em 3em;
             padding-left: 0;
             color: $color-light;
-            display: grid;
-            grid-template-rows: repeat(10 1fr);
-            grid-template-columns: 1fr 1fr;
-            column-gap: 6em;
-            grid-template-areas:
-                'h-logo h-form'
-                'h-logo h-form'
-                'h-tag h-form'
-                'h-tag h-form'
-                'h-desc h-form'
-                'h-desc h-form'
-                'h-desc h-form'
-                'h-desc h-form'
-                'h-desc h-form'
-                'h--blank h-blank';
-
-            @media (max-width: $width_phone) {
-                grid-template-areas:
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo'
-                    'h-logo h-logo h-logo';
-            }
+            display: flex;
+            flex-wrap: wrap;
         }
+        .left-column {
+            flex: 1;
 
+            margin-right: 1.5em;
+        }
         .h-logo {
             #stable-logo {
-                width: 30em;
+                width: 100%;
                 height: auto;
                 filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
             }
-            grid-area: h-logo;
         }
         .h-tag {
-            font-size: 2.6rem;
-            @media (max-width: $width_phone) {
-                display: none;
-            }
-            grid-area: h-tag;
+            font-size: 1.5em;
+            text-align: center;
         }
         .h-desc {
             p {
-                width: 100%;
                 text-align: left;
-                font-size: 2rem;
+                font-size: 1em;
+                margin: 0 auto;
             }
-            @media (max-width: $width_phone) {
-                display: none;
-            }
-            grid-area: h-desc;
-        }
-        .h-social {
-            @media (max-width: $width_phone) {
-                display: none;
-            }
-            grid-area: h-social;
         }
 
         .h-form {
             margin-top: 1em;
-            @media (max-width: $width_phone) {
-                display: none;
-            }
-            grid-area: h-form;
-        }
-        .h-contact {
-            @media (max-width: $width_phone) {
-                display: none;
-            }
-            grid-area: h-contact;
         }
     }
 }
