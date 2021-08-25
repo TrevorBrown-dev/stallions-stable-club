@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/Footer/ScrollToTop';
 import { MessagePopup } from './components/MessagePopup';
@@ -21,13 +21,13 @@ const _App: React.FC = () => {
             <Route path='/' exact>
                 <Home />
             </Route>
-            <Route path='/testing' exact>
+            {/* <Route path='/testing' exact>
                 <div className='page-main-container'>
                     <div className='page-main'>
                         <Testing />
                     </div>
                 </div>
-            </Route>
+            </Route> */}
             <Footer />
         </Router>
     );
