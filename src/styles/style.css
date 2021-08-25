@@ -213,10 +213,23 @@ svg#stable-logo {
 .social-media svg {
   width: 3em;
   fill: #ebebeb;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  border-radius: 10px;
+  padding: 0.3em;
 }
 .social-media svg:hover {
-  fill: #0689db;
-  cursor: pointer;
+  background-color: white;
+}
+.social-media svg#twitter:hover {
+  fill: #1da1f2;
+}
+.social-media svg#instagram:hover {
+  fill: url("#rg");
+}
+.social-media svg#facebook:hover {
+  fill: #4267b2;
 }
 
 .nav-container {
@@ -287,6 +300,12 @@ svg#stable-logo {
 }
 .footer .social {
   margin-bottom: 0.7em;
+}
+.footer .copyright {
+  margin: 0.5em;
+  color: rgba(235, 235, 235, 0.6);
+  font-size: 0.9em;
+  text-align: center;
 }
 
 /* custom scrollbar */
@@ -683,7 +702,7 @@ textarea:focus {
 }
 .contact-form .contact-fieldset .contact-grid {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 2fr) minmax(0, 1.2fr);
+  grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 2fr) minmax(0, 1.2fr);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 0.5em;
   column-gap: 0.5em;
@@ -696,6 +715,15 @@ textarea:focus {
 }
 .contact-form .contact-fieldset .contact-grid .fill {
   grid-column: 1/-1;
+}
+.contact-form .contact-fieldset .contact-grid .time-inputs {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  justify-content: space-around;
+}
+.contact-form .contact-fieldset .contact-grid .time-inputs input {
+  width: 100%;
 }
 .contact-form .contact-fieldset .contact-grid .dates {
   grid-column: 1/-1;

@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { SocialBar } from '../SocialBar';
 
 export const Footer: React.FC = () => {
@@ -37,6 +38,9 @@ export const Footer: React.FC = () => {
                         </div>
                     </div>
                 </address>
+            </div>
+            <div className="copyright">
+                &copy; {moment().year()} — The Stable Club. All rights reserved.
             </div>
         </footer>
     );

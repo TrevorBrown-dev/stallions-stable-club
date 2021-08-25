@@ -12,12 +12,14 @@ export interface ContactFormData {
     firstName: string;
     lastName: string;
     email: string;
+    startTime: string;
+    endTime: string;
     dates: string;
     message: string;
 }
 
 //The default values for the form
-const blankForm: ContactFormData = { firstName: '', lastName: '', email: '', dates: '', message: '' };
+const blankForm: ContactFormData = { firstName: '', lastName: '', startTime: '', endTime: '', email: '', dates: '', message: '' };
 export const ContactForm: React.FC = () => {
     const send = useEmail();
 
@@ -55,6 +57,17 @@ export const ContactForm: React.FC = () => {
                     <input name='email' value={formData['email']} type='email' onChange={handleInputChange} className='fill' placeholder='example@gmail.com' />
                     <h4 className='fill'>Date: </h4>
                     <input name='dates' type='date' value={formData['dates']} onChange={handleInputChange} className='fill' />
+                    <h4 className='fill'>Time: </h4>
+                    <div className="time-inputs fill">
+                        <input name='startTime' type='time' value={formData['startTime']} onChange={handleInputChange} className='fill'
+                            style={{ marginRight: '1em' }}
+                        />
+                        <span style={{ fontSize: '2em' }}>to</span>
+                        <input name='endTime' type='time' value={formData['endTime']} onChange={handleInputChange} className='fill'
+                            style={{ marginLeft: '1em' }}
+
+                        />
+                    </div>
 
                     <h4 className='fill'>Comment or Message: </h4>
                     <textarea name='message' id='contact-message' value={formData['message']} onChange={handleInputChange} className='fill' placeholder='Hello!'></textarea>

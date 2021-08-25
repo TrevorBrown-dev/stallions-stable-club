@@ -12,7 +12,7 @@
             $input-height: minmax(0, 1fr);
             $textarea-height: minmax(0, 2fr);
             $button-height: minmax(0, 1.2fr);
-            grid-template-rows: $title-height $input-height $title-height $input-height $title-height $input-height $title-height $textarea-height $button-height;
+            grid-template-rows: $title-height $input-height $title-height $input-height $title-height $input-height $title-height $input-height $title-height $textarea-height $button-height;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             row-gap: 0.5em;
             column-gap: 0.5em;
@@ -24,6 +24,15 @@
             }
             .fill {
                 grid-column: 1/-1;
+            }
+            .time-inputs {
+                display: flex;
+                width: 100%;
+                flex: 1;
+                justify-content: space-around;
+                input {
+                    width: 100%;
+                }
             }
             .dates {
                 grid-column: 1/-1;
