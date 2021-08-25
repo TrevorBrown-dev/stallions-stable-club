@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { HashRouter as Router, Route } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/Footer/ScrollToTop';
 import { MessagePopup } from './components/MessagePopup';
@@ -15,12 +15,12 @@ const _App: React.FC = () => {
         window.document.title = 'The Stable Club at Cantine Field';
     }, []);
     return (
-        <Router>
+        <>
             <Navbar />
             <ScrollToTop />
-            <Route path='/' exact>
-                <Home />
-            </Route>
+            <Home />
+            {/* <Route path={`/demo`} exact> */}
+            {/* </Route> */}
             {/* <Route path='/testing' exact>
                 <div className='page-main-container'>
                     <div className='page-main'>
@@ -29,7 +29,7 @@ const _App: React.FC = () => {
                 </div>
             </Route> */}
             <Footer />
-        </Router>
+        </>
     );
 };
 

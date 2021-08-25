@@ -6,7 +6,7 @@ const NavItem: React.FC<NavItemProps> = ({ children, to }) => {
     console.log(to);
     return (
         <div className='nav-item'>
-            <Link to={to}>{children}</Link>
+            <a href={to}>{children}</a>
         </div>
     );
 };
