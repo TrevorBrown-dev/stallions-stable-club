@@ -13,6 +13,12 @@
         width: 4em;
         text-align: center;
     }
+    @media (max-width: 50ch) {
+        #svg-lines {
+            display: none;
+        }
+        // animation: open-wide $nav-open-speed ease $nav-open-delay forwards;
+    }
     #svg-lines {
         fill: $color-light;
     }
@@ -34,7 +40,7 @@
         width: 0%;
     }
     to {
-        width: 40%;
+        width: max(40%, 30ch);
     }
 }
 @keyframes open-wide {
@@ -50,12 +56,11 @@
     font-size: 1.3em;
     $nav-open-speed: 0.5s;
     $nav-open-delay: 0.2s;
+    margin: 1em 0;
     width: 0%;
     overflow: hidden;
     animation: open $nav-open-speed ease $nav-open-delay forwards;
-    @media (max-width: $width_phone) {
-        animation: open-wide $nav-open-speed ease $nav-open-delay forwards;
-    }
+
     display: flex;
     justify-content: center;
 }

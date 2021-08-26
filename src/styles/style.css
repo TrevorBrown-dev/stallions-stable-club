@@ -254,6 +254,11 @@ svg#stable-logo {
   width: 4em;
   text-align: center;
 }
+@media (max-width: 50ch) {
+  .nav-container #svg-lines {
+    display: none;
+  }
+}
 .nav-container #svg-lines {
   fill: #ebebeb;
 }
@@ -267,7 +272,7 @@ svg#stable-logo {
     width: 0%;
   }
   to {
-    width: 40%;
+    width: max(40%, 30ch);
   }
 }
 @keyframes open-wide {
@@ -280,16 +285,12 @@ svg#stable-logo {
 }
 .navbar {
   font-size: 1.3em;
+  margin: 1em 0;
   width: 0%;
   overflow: hidden;
   animation: open 0.5s ease 0.2s forwards;
   display: flex;
   justify-content: center;
-}
-@media (max-width: 850px) {
-  .navbar {
-    animation: open-wide 0.5s ease 0.2s forwards;
-  }
 }
 
 .footer {
