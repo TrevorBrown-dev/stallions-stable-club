@@ -23,20 +23,35 @@
         padding-bottom: 5em;
         .hero-content {
             //This will contain the actual content for the grid once it is properly aligned and set up.
-            padding: 1em 3em;
-            padding-left: 0;
+            padding: 1em;
             color: $color-light;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .left-column {
+            display: flex;
             flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            @media (min-width: 1028px) {
+                margin-right: 1.5em;
+            }
+        }
+        .right-column {
+            // margin-left: 1.5em;
 
-            margin-right: 1.5em;
+            @media (max-width: 425px) {
+                display: none;
+            }
         }
         .h-logo {
+            // padding: 0 auto;
+            position: relative;
             #stable-logo {
-                width: 100%;
+                display: block;
+                margin: 0 auto;
+                width: min(90%, 70vw);
                 height: auto;
                 filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
             }

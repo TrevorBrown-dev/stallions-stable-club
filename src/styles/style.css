@@ -254,7 +254,7 @@ svg#stable-logo {
   width: 4em;
   text-align: center;
 }
-@media (max-width: 50ch) {
+@media (max-width: 425px) {
   .nav-container #svg-lines {
     display: none;
   }
@@ -541,6 +541,11 @@ button.contact-button:hover {
   color: #ebebeb;
   border: 2px solid #ebebeb;
 }
+@media (max-width: 768px) {
+  .scroll-to-top {
+    display: none;
+  }
+}
 
 input {
   all: unset;
@@ -769,18 +774,35 @@ textarea:focus {
   padding-bottom: 5em;
 }
 .hero .hero-container .hero-content {
-  padding: 1em 3em;
-  padding-left: 0;
+  padding: 1em;
   color: #ebebeb;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .hero .hero-container .left-column {
+  display: flex;
   flex: 1;
-  margin-right: 1.5em;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 1028px) {
+  .hero .hero-container .left-column {
+    margin-right: 1.5em;
+  }
+}
+@media (max-width: 425px) {
+  .hero .hero-container .right-column {
+    display: none;
+  }
+}
+.hero .hero-container .h-logo {
+  position: relative;
 }
 .hero .hero-container .h-logo #stable-logo {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: min(90%, 70vw);
   height: auto;
   filter: drop-shadow(3px 3px 5px rgba(184, 184, 184, 0.2));
 }
