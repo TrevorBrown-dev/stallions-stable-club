@@ -21,10 +21,10 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({ text, day, date }) =
     return (
         <div className='calendar-cell' id={day}>
             <div className='cell-text'>
-                <div className={`day `} id={moment().format('MM/DD/YYYY') === moment(date).format('MM/DD/YYYY') ? 'today' : ''}>
+                <div className={`day `} id={moment().format('MM-DD-YYYY') === moment(date).format('MM-DD-YYYY') ? 'today' : ''}>
                     <span>{text}</span>
                 </div>
-                {events && events.map((event) => <EventRibbon event={event} />)}
+                {events && events.map((event, index) => <EventRibbon event={event} key={index} />)}
             </div>
         </div>
     );

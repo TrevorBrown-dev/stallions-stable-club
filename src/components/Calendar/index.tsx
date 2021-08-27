@@ -20,13 +20,13 @@ const PrivateCalendar: React.FC = () => {
     const generateCalendarGrid = useCallback(() => {
         let dayCount = 0;
         const daysInMonth = moment().daysInMonth();
-        const firstDayOfMonth = moment(`${currentMoment.month() + 1}/1/${currentMoment.year()}`).day();
+        const firstDayOfMonth = moment(`${currentMoment.month() + 1}-1-${currentMoment.year()}`).day();
         const grid: JSX.Element[] = [];
         for (let y = 0; y < 6 && dayCount < daysInMonth; y++) {
             const row: JSX.Element[] = [];
             for (let x = 0; x < 7; x++) {
                 if ((dayCount === 0 && x === firstDayOfMonth) || (dayCount > 0 && dayCount < daysInMonth)) {
-                    const date = moment(`${currentMoment.month() + 1}/${dayCount + 1}/${currentMoment.year()}`).format('MM/DD/YYYY')
+                    const date = moment(`${currentMoment.month() + 1}-${dayCount + 1}-${currentMoment.year()}`).format('MM-DD-YYYY')
                     row.push(<CalendarCell day={date} text={`${dayCount + 1}`} key={date} date={date} />);
                     dayCount++;
                 } else {
@@ -42,7 +42,7 @@ const PrivateCalendar: React.FC = () => {
             );
         }
         return grid;
-    }, [currentMoment, setMoment]);
+    }, [currentMoment]);
 
     const modal = useContext(CalendarModalContext);
     return (

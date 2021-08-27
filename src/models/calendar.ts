@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ical from 'ical';
 import moment from 'moment';
 import { calendarApi } from '../apis/calendarApi';
@@ -25,7 +25,6 @@ interface CalendarDateObj {
 }
 type UnknownObject = { [key: string]: any };
 const mapItem = (item: UnknownObject): CalendarEvent => {
-    console.log(item);
     const event: CalendarEvent = {
         attachments: item?.attachments || [],
         id: item?.id || '',
@@ -41,16 +40,16 @@ interface iCalEvents {
 }
 export const useCalendar = (calendarID: string): [iCalEvents, React.Dispatch<React.SetStateAction<iCalEvents>>] => {
     const [events, setEvents] = useState<iCalEvents>({});
-    const fetchLocal = () => {
+    const fetchLocal = useCallback(() => {
         fetch('basic.ics')
             .then((r) => r.text())
             .then((text) => {
                 const cal = ical.parseICS(text);
                 parseData(cal);
             });
-    };
+    }, []);
 
-    const fetchRemote = async () => {
+    const fetchRemote = useCallback(async () => {
         calendarApi
             .get(`/calendars/${calendarID}/events`)
             .then(({ data }) => {
@@ -67,14 +66,13 @@ export const useCalendar = (calendarID: string): [iCalEvents, React.Dispatch<Rea
                 console.log('Fetching calendar data failed', err);
                 fetchLocal();
             });
-    };
+    }, [calendarID, fetchLocal]);
     const parseData = (data: any) => {
         const parsedEvents: iCalEvents = {};
         for (const event in data) {
             //this is the key for the objects.
-            const date = moment(data[event].start).format('MM/DD/YYYY');
+            const date = moment(data[event].start).format('MM-DD-YYYY');
 
-            console.log(date);
             if (parsedEvents[date] !== undefined) {
                 //We already have an event for this day, add it to the array
                 parsedEvents[date].push(data[event]);
@@ -90,6 +88,6 @@ export const useCalendar = (calendarID: string): [iCalEvents, React.Dispatch<Rea
         try {
             fetchRemote();
         } catch (error) {}
-    }, []);
+    }, [fetchRemote]);
     return [events, setEvents];
 };

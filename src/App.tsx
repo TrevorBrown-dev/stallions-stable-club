@@ -1,19 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { HashRouter as Router, Route } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/Footer/ScrollToTop';
 import { MessagePopup } from './components/MessagePopup';
 import { Navbar } from './components/Navbar';
-import { MessageContext, MessageContextProps, MessageProps } from './contexts/MessageContext';
-import { Contact } from './pages/Contact';
+import { MessageContext, MessageProps } from './contexts/MessageContext';
 import { Home } from './pages/Home';
-import { Testing } from './pages/Testing';
 import './styles/style.css';
 
-const _App: React.FC = () => {
-    useEffect(() => {
-        window.document.title = 'The Stable Club at Cantine Field';
-    }, []);
+const PrivateApp: React.FC = () => {
     return (
         <>
             <Navbar />
@@ -50,7 +45,7 @@ export const App: React.FC = () => {
     return (
         <MessageContext.Provider value={{ message, setMessage }}>
             {message && <MessagePopup {...message} closingSpeed={closingSpeed} />}
-            <_App />
+            <PrivateApp />
         </MessageContext.Provider>
     );
 };

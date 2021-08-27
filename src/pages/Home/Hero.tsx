@@ -1,6 +1,4 @@
 import { Calendar } from '../../components/Calendar';
-import { ContactForm } from '../../components/ContactForm';
-import { SocialBar } from '../../components/SocialBar';
 import { TheStableClubLogo } from '../../components/svgs/TheSableClubLogo';
 export const Hero: React.FC = () => {
     return (
@@ -11,9 +9,6 @@ export const Hero: React.FC = () => {
                         <div className='h-logo'>
                             <TheStableClubLogo />
                         </div>
-                        {/* <div className="h-social">
-                        <SocialBar />
-                    </div> */}
                         <div className='h-tag'>
                             <h1>Your Tagline!</h1>
                         </div>

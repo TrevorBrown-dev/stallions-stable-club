@@ -17,7 +17,7 @@ export const EventRibbon: React.FC<EventRibbonProps> = ({ event }) => {
     const allDay = useMemo(() => isAllDay(event.start as string, event.end as string), [event.start, event.end]);
     const handleRibbonClick: React.MouseEventHandler<HTMLDivElement> = useCallback((e) => {
         modal?.setEventInModal(event);
-    }, [event])
+    }, [event, modal])
 
 
     return (

@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 interface NavItemProps {
     to: string;
 }
+//This file looks a little weird because It's set up to use react router in the future
 const NavItem: React.FC<NavItemProps> = ({ children, to }) => {
-    console.log(to);
     return (
         <div className='nav-item'>
             <a href={to}>{children}</a>

@@ -1,36 +1,34 @@
+//Button For Calendar
+.today-button {
+    text-align: center;
+    background-color: $color-light;
+    border: 2px solid $color-off-light;
+    padding: 1em 0.5em;
+    border-radius: 10px;
+    color: $color-off-light;
+    transition: all 0.1s ease;
+    padding: 0 1em;
+    margin-right: 1em;
+
+    &:hover {
+        color: $color-off-primary;
+        border-color: $color-off-primary;
+    }
+    &:active {
+        transform: scale(99%);
+    }
+}
+
 .calendar {
     position: relative;
-    padding: 2em;
-    border: 2px solid $color-off-light;
-    border-radius: 30px;
-    border-radius: 30px 0 0 30px;
     background-color: $color-light;
     color: $color-dark;
-    align-items: start;
+    border: 2px solid $color-off-light;
+    border-radius: 30px;
+    padding: 2em;
     font-size: 1.7vh !important;
-    overflow-y: auto;
-    width: 100%;
     .calendar-title {
         text-align: center;
-    }
-    .today-button {
-        text-align: center;
-        background-color: $color-light;
-        border: 2px solid $color-off-light;
-        padding: 1em 0.5em;
-        border-radius: 10px;
-        color: $color-off-light;
-        transition: all 0.3s ease;
-        padding: 0 1em;
-        margin-right: 1em;
-        &:hover {
-            color: $color-off-primary;
-            border-color: $color-off-primary;
-        }
-        &:active {
-            color: $color-off-light;
-            border-color: $color-off-light;
-        }
     }
     .calendar-month {
         padding: 0.6em;
@@ -59,10 +57,7 @@
     }
     .calendar-grid {
         display: grid;
-        grid-template-rows: auto;
         .calendar-days {
-            // border: 1px solid $color-dark;
-            // border-bottom: none;
             margin-bottom: 0.4em;
         }
         .calendar-row {
@@ -77,19 +72,18 @@
                     overflow: hidden;
                 }
                 word-wrap: break-word;
-                overflow: hidden;
                 border: 2px solid $color-off-light;
                 background-color: $color-light;
                 color: $color-dark;
                 width: $cell-size;
                 min-height: $cell-size;
                 max-height: 15em;
+
                 transition: all 0.2s ease;
 
                 &:not(:last-child) {
                     border-right: none;
                 }
-                overflow-y: auto;
 
                 &:hover {
                     color: $color-primary;
@@ -101,13 +95,11 @@
                 .day {
                     padding: 0.5em 0;
                     text-align: center;
-                    &#today {
-                        span {
-                            background-color: $color-off-primary;
-                            color: $color-light;
-                            border-radius: 100px;
-                            padding: 0.2em;
-                        }
+                    &#today span {
+                        background-color: $color-off-primary;
+                        color: $color-light;
+                        border-radius: 100px;
+                        padding: 0.2em;
                     }
                     font-size: 0.8em;
                     color: $color-off-light;

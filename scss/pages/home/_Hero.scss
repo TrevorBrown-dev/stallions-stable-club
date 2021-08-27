@@ -39,22 +39,18 @@
             }
         }
         .right-column {
-            // margin-left: 1.5em;
-
             @media (max-width: 425px) {
                 display: none;
             }
         }
-        .h-logo {
-            // padding: 0 auto;
-            position: relative;
-            #stable-logo {
-                display: block;
-                margin: 0 auto;
-                width: min(90%, 70vw);
-                height: auto;
-                filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
-            }
+        .h-logo #stable-logo {
+            display: block;
+            margin: 0 auto;
+
+            width: min(70%, 70vw);
+            height: auto;
+
+            filter: drop-shadow(3px 3px 5px rgba($color-off-light, 20%));
         }
         .h-tag {
             font-size: 1.5em;

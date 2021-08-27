@@ -581,40 +581,36 @@ textarea:focus {
   box-shadow: 2px 0px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
-.calendar {
-  position: relative;
-  padding: 2em;
-  border: 2px solid #b8b8b8;
-  border-radius: 30px;
-  border-radius: 30px 0 0 30px;
-  background-color: #ebebeb;
-  color: #000;
-  align-items: start;
-  font-size: 1.7vh !important;
-  overflow-y: auto;
-  width: 100%;
-}
-.calendar .calendar-title {
-  text-align: center;
-}
-.calendar .today-button {
+.today-button {
   text-align: center;
   background-color: #ebebeb;
   border: 2px solid #b8b8b8;
   padding: 1em 0.5em;
   border-radius: 10px;
   color: #b8b8b8;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   padding: 0 1em;
   margin-right: 1em;
 }
-.calendar .today-button:hover {
+.today-button:hover {
   color: #0689db;
   border-color: #0689db;
 }
-.calendar .today-button:active {
-  color: #b8b8b8;
-  border-color: #b8b8b8;
+.today-button:active {
+  transform: scale(99%);
+}
+
+.calendar {
+  position: relative;
+  background-color: #ebebeb;
+  color: #000;
+  border: 2px solid #b8b8b8;
+  border-radius: 30px;
+  padding: 2em;
+  font-size: 1.7vh !important;
+}
+.calendar .calendar-title {
+  text-align: center;
 }
 .calendar .calendar-month {
   padding: 0.6em;
@@ -642,7 +638,6 @@ textarea:focus {
 }
 .calendar .calendar-grid {
   display: grid;
-  grid-template-rows: auto;
 }
 .calendar .calendar-grid .calendar-days {
   margin-bottom: 0.4em;
@@ -656,7 +651,6 @@ textarea:focus {
 }
 .calendar .calendar-grid .calendar-row .calendar-cell {
   word-wrap: break-word;
-  overflow: hidden;
   border: 2px solid #b8b8b8;
   background-color: #ebebeb;
   color: #000;
@@ -664,7 +658,6 @@ textarea:focus {
   min-height: 7em;
   max-height: 15em;
   transition: all 0.2s ease;
-  overflow-y: auto;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell .cell-text {
   overflow: hidden;
@@ -796,13 +789,10 @@ textarea:focus {
     display: none;
   }
 }
-.hero .hero-container .h-logo {
-  position: relative;
-}
 .hero .hero-container .h-logo #stable-logo {
   display: block;
   margin: 0 auto;
-  width: min(90%, 70vw);
+  width: min(70%, 70vw);
   height: auto;
   filter: drop-shadow(3px 3px 5px rgba(184, 184, 184, 0.2));
 }
@@ -820,7 +810,7 @@ textarea:focus {
 }
 
 .contact-us {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/testing.JPG");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/contact.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

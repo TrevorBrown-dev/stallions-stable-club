@@ -1,5 +1,4 @@
 import { ContactForm } from '../../components/ContactForm';
-import { SpanningCard } from '../../components/SpanningCard';
 
 export const ContactUs: React.FC = () => {
     return (
