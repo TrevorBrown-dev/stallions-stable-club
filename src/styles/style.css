@@ -678,6 +678,9 @@ textarea:focus {
   color: #b8b8b8;
 }
 .calendar .calendar-grid .calendar-row .calendar-cell .day#today span {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
   background-color: #0689db;
   color: #ebebeb;
   border-radius: 100px;

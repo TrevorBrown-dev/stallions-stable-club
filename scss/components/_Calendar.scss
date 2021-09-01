@@ -96,8 +96,13 @@
                     padding: 0.5em 0;
                     text-align: center;
                     &#today span {
+                        $day-iocn-size: 1.5em;
+                        display: inline-block;
+                        width: $day-iocn-size;
+                        height: $day-iocn-size;
                         background-color: $color-off-primary;
                         color: $color-light;
+
                         border-radius: 100px;
                         padding: 0.2em;
                     }
