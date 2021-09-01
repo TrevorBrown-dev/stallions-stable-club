@@ -9,14 +9,11 @@ export const Hero: React.FC = () => {
                         <div className='h-logo'>
                             <TheStableClubLogo />
                         </div>
-                        <div className='h-tag'>
-                            <h1>Your Tagline!</h1>
+                        <div className='h-tag' style={{ fontSize: '.7em' }}>
+                            <h1>Sports Bar</h1>
                         </div>
                         <div className='h-desc'>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae quo molestias, dignissimos nemo deserunt molestiae officia atque ut voluptatum libero fugit
-                                animi, eius doloremque? Eveniet, laborum ratione. Molestiae provident obcaecati minima. Dolore et fuga architecto distinctio natus. Ullam, doloribus?
-                            </p>
+                            <p>The Stable Club is a private member bar located at Cantine Field. The Stable includes a VIP party deck over center field for great viewing of all Stallions games.</p>
                         </div>
                     </div>
                     <div className='right-column'>

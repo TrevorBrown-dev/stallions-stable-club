@@ -797,12 +797,13 @@ textarea:focus {
   filter: drop-shadow(3px 3px 5px rgba(184, 184, 184, 0.2));
 }
 .hero .hero-container .h-tag {
-  font-size: 1.5em;
+  font-size: 0.9em;
   text-align: center;
+  margin: 0.7em 0;
 }
 .hero .hero-container .h-desc p {
   text-align: left;
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0 auto;
 }
 .hero .hero-container .h-form {
