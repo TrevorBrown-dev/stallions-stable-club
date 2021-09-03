@@ -1,4 +1,5 @@
 import { Calendar } from '../../components/Calendar';
+import { EventsList } from '../../components/Calendar/EventsList';
 import { TheStableClubLogo } from '../../components/svgs/TheSableClubLogo';
 export const Hero: React.FC = () => {
     return (

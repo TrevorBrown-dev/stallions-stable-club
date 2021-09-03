@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { CalendarContext } from '../../contexts/CalendarContext';
 import { EventRibbon } from './EventRibbon';
 
-interface CalendarCellProps {
+export interface CalendarCellProps {
     text: string;
     day: string;
     date: string;
