@@ -448,11 +448,14 @@ button.contact-button:hover {
   color: #000;
   width: 100%;
   height: 70vh;
+  overflow: hidden;
+  border-radius: 30px;
 }
 .calendar-modal .content {
   animation: slide-down 0.3s ease forwards;
   position: absolute;
-  left: 45%;
+  left: 50%;
+  top: 0;
   transform: translateX(-50%);
   background-color: #ebebeb;
   border: 2px solid #b8b8b8;

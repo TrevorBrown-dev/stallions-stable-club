@@ -6,11 +6,18 @@ import { CalendarEvent } from "../../../models/calendar";
 import { EventItem } from "./EventItem";
 
 export const EventsList: React.FC = () => {
-    const sortEvents = useCallback((events: CalendarEvent[]) => {
-
-    }, [])
     const [listItems, setListItems] = useState<JSX.Element[]>([]);
     const _events = useContext(CalendarContext);
+
+    const sortEvents = useCallback((eventsList: CalendarEvent[]) => {
+        eventsList.sort((a, b) => {
+            //Sort the events by order of day and then start time.
+            return moment(a.start as string).diff(moment(b.start as string));
+        })
+
+    }, [])
+
+
     useEffect(() => {
         console.log(_events);
         const eventsList: CalendarEvent[] = [];
@@ -19,10 +26,7 @@ export const EventsList: React.FC = () => {
                 eventsList.push(e);
             });
         }
-        eventsList.sort((a, b) => {
-            //Sort the events by order of day and then start time.
-            return moment(a.start as string).diff(moment(b.start as string));
-        })
+        sortEvents(eventsList);
         //After sorting map ver them assigning jsx then set the list Items
         const list = eventsList.map((e) => <EventItem {...e} />)
         setListItems(list);

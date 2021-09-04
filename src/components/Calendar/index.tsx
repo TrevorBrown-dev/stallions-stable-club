@@ -88,7 +88,6 @@ export const Calendar = () => {
     }, [window.innerWidth])
     return (
         <CalendarModalContext.Provider value={{ eventInModal, setEventInModal }}>
-
             <CalendarContext.Provider value={{ events, setEvents }}>
                 <EventsList />
                 <PrivateCalendar />
