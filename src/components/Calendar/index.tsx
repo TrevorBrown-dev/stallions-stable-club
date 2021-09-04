@@ -5,6 +5,7 @@ import { CalendarContext, CalendarEventsProps } from "../../contexts/CalendarCon
 import { CalendarEvent, useCalendar } from "../../models/calendar";
 import { CalendarModalContext } from "../../contexts/CalendarModalContext";
 import { CalendarModal } from "./CalendarModal";
+import { EventsList } from "./EventsList";
 const PrivateCalendar: React.FC = () => {
 
 
@@ -77,14 +78,19 @@ export const Calendar = () => {
     const [iCalEvents,] = useCalendar('mq933te8jm95j3ea17i7tp25cg@group.calendar.google.com');
     const [events, setEvents] = useState<CalendarEventsProps>(iCalEvents);
     const [eventInModal, setEventInModal] = useState<CalendarEvent | null>(null);
+    const [currentComponent, setCurrentComponent] = useState<JSX.Element>(<PrivateCalendar />);
     useEffect(() => {
         setEvents({ ...iCalEvents });
     }, [iCalEvents])
-
+    useEffect(() => {
+        console.log(window.innerWidth);
+        setCurrentComponent((window.innerWidth > 425) ? <PrivateCalendar /> : <EventsList />);
+    }, [window.innerWidth])
     return (
         <CalendarModalContext.Provider value={{ eventInModal, setEventInModal }}>
 
             <CalendarContext.Provider value={{ events, setEvents }}>
+                <EventsList />
                 <PrivateCalendar />
             </CalendarContext.Provider>
         </CalendarModalContext.Provider>

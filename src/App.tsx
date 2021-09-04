@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Calendar } from './components/Calendar';
+import { EventsList } from './components/Calendar/EventsList';
 // import { HashRouter as Router, Route } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/Footer/ScrollToTop';
@@ -14,15 +16,6 @@ const PrivateApp: React.FC = () => {
             <Navbar />
             <ScrollToTop />
             <Home />
-            {/* <Route path={`/demo`} exact> */}
-            {/* </Route> */}
-            {/* <Route path='/testing' exact>
-                <div className='page-main-container'>
-                    <div className='page-main'>
-                        <Testing />
-                    </div>
-                </div>
-            </Route> */}
             <Footer />
         </>
     );

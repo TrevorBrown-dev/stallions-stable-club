@@ -1,0 +1,21 @@
+.events-list {
+    position: relative;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 25vh;
+    $el-radius: 10px;
+    border-radius: $el-radius 0 0 $el-radius;
+    .event-item {
+        background-color: white;
+        padding: 1em;
+        border: 2px solid $color-off-light;
+        color: $color-dark;
+        &:not(:last-child) {
+            border-bottom: none;
+        }
+        .description {
+            word-wrap: break-word;
+        }
+    }
+}

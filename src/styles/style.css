@@ -399,6 +399,27 @@ button.contact-button:hover {
   font-weight: bold;
 }
 
+.events-list {
+  position: relative;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 25vh;
+  border-radius: 10px 0 0 10px;
+}
+.events-list .event-item {
+  background-color: white;
+  padding: 1em;
+  border: 2px solid #b8b8b8;
+  color: #000;
+}
+.events-list .event-item:not(:last-child) {
+  border-bottom: none;
+}
+.events-list .event-item .description {
+  word-wrap: break-word;
+}
+
 @keyframes slide-down {
   0% {
     top: -40%;
@@ -766,7 +787,6 @@ textarea:focus {
 }
 .hero .hero-container {
   padding-top: 5vh;
-  padding-left: 1em;
   padding-bottom: 5em;
 }
 .hero .hero-container .hero-content {
@@ -785,11 +805,6 @@ textarea:focus {
 @media (min-width: 1028px) {
   .hero .hero-container .left-column {
     margin-right: 1.5em;
-  }
-}
-@media (max-width: 425px) {
-  .hero .hero-container .right-column {
-    display: none;
   }
 }
 .hero .hero-container .h-logo #stable-logo {
@@ -813,6 +828,24 @@ textarea:focus {
   margin-top: 1em;
 }
 
+@media (max-width: 1440px) {
+  .calendar {
+    display: none;
+  }
+
+  .events-list {
+    display: block;
+  }
+}
+@media (min-width: 1440px) {
+  .calendar {
+    display: grid;
+  }
+
+  .events-list {
+    display: none;
+  }
+}
 .contact-us {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 50, 79, 0.7)), url("../media/contact.webp");
   background-size: cover;
