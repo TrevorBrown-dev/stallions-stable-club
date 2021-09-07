@@ -10,7 +10,7 @@ import { MessageContext, MessageProps } from './contexts/MessageContext';
 import { Home } from './pages/Home';
 import './styles/style.css';
 
-const PrivateApp: React.FC = () => {
+const App: React.FC = () => {
     return (
         <>
             <Navbar />
@@ -21,7 +21,7 @@ const PrivateApp: React.FC = () => {
     );
 };
 
-export const App: React.FC = () => {
+const AppWithContext: React.FC = () => {
     const closingSpeed = 4000;
     const [message, setMessage] = useState<MessageProps | null>(null);
     useEffect(() => {
@@ -38,7 +38,8 @@ export const App: React.FC = () => {
     return (
         <MessageContext.Provider value={{ message, setMessage }}>
             {message && <MessagePopup {...message} closingSpeed={closingSpeed} />}
-            <PrivateApp />
+            <App />
         </MessageContext.Provider>
     );
 };
+export { AppWithContext as App };
